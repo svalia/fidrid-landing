@@ -1,0 +1,170 @@
+/* Оформление страниц с юридическими документами.
+
+   Цвета и шрифт берутся из токенов дизайн-системы лендинга, но вёрстка здесь
+   своя: это длинный текст, которому нужна колонка комфортной ширины, крупный
+   межстрочный интервал и таблицы, не ломающие страницу на телефоне.
+*/
+
+html, body {
+  margin: 0;
+  background: var(--bg, #05101E);
+  color: var(--text, #fff);
+  font-family: var(--font-text), 'Golos Text', system-ui, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+a { color: var(--cyan-2, #47E4FF); text-decoration: none; }
+a:hover { color: #fff; }
+
+/* Шапка */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px clamp(16px, 4vw, 48px);
+  background: rgba(5, 16, 30, .82);
+  backdrop-filter: blur(22px);
+  border-bottom: 1px solid var(--border-faint, rgba(255,255,255,.06));
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-family: var(--font-display), 'Golos Text', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -.02em;
+}
+.brand img { border-radius: 9px; display: block; }
+
+header nav { display: flex; align-items: center; gap: 16px; }
+header nav .back { font-size: 14px; color: rgba(255, 255, 255, .7); }
+header nav .back:hover { color: #fff; }
+
+#lang-toggle {
+  cursor: pointer;
+  font-family: var(--font-display), 'Golos Text', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .06em;
+  color: #fff;
+  padding: 9px 14px;
+  border-radius: var(--radius-pill, 999px);
+  border: 1px solid var(--border-soft, rgba(255,255,255,.10));
+  background: var(--surface-2, rgba(255,255,255,.05));
+}
+#lang-toggle:hover { border-color: rgba(71, 228, 255, .6); }
+
+/* Текст документа */
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 64px) clamp(16px, 4vw, 48px) 40px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-family: var(--font-display), 'Golos Text', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(26px, 4vw, 40px);
+  line-height: 1.12;
+  letter-spacing: -.03em;
+  text-wrap: balance;
+}
+
+h2 {
+  margin: 40px 0 12px;
+  font-family: var(--font-display), 'Golos Text', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(19px, 2.4vw, 24px);
+  letter-spacing: -.02em;
+}
+
+h3 {
+  margin: 28px 0 10px;
+  font-family: var(--font-display), 'Golos Text', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+p, li {
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, .74);
+}
+p { margin: 0 0 14px; }
+
+strong { color: #fff; font-weight: 600; }
+
+ul { margin: 0 0 16px; padding-left: 22px; }
+li { margin-bottom: 7px; }
+
+/* Таблицы: на узком экране прокручиваются, а не ломают страницу */
+.table-scroll {
+  overflow-x: auto;
+  margin: 0 0 22px;
+  border: 1px solid var(--border-soft, rgba(255,255,255,.10));
+  border-radius: 14px;
+  background: var(--surface-3, rgba(255,255,255,.025));
+}
+
+table { border-collapse: collapse; width: 100%; min-width: 520px; }
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 14.5px;
+  line-height: 1.55;
+  border-bottom: 1px solid var(--border-faint, rgba(255,255,255,.06));
+}
+
+th {
+  font-family: var(--font-display), 'Golos Text', system-ui, sans-serif;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+
+td { color: rgba(255, 255, 255, .72); }
+tbody tr:last-child th, tbody tr:last-child td { border-bottom: none; }
+
+/* Кнопка скачивания PDF */
+.download { margin: 40px 0 0; }
+.download a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-display), 'Golos Text', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: var(--radius-pill, 999px);
+  border: 1px solid var(--border, rgba(255,255,255,.40));
+  background: var(--surface-1, rgba(255,255,255,.10));
+}
+.download a:hover { border-color: rgba(71, 228, 255, .6); }
+
+footer {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 26px clamp(16px, 4vw, 48px) 48px;
+  border-top: 1px solid var(--border-faint, rgba(255,255,255,.06));
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  justify-content: space-between;
+  font-size: 13px;
+  color: rgba(255, 255, 255, .4);
+}
+
+@media (max-width: 560px) {
+  header nav .back { display: none; }
+}

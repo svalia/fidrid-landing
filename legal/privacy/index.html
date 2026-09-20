@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Политика конфиденциальности приложения FidRid</title>
+<script>window.__fidridTitles = { ru: "Политика конфиденциальности приложения FidRid", en: "FidRid — Privacy Policy" };</script>
+<meta name="description" content="Политика конфиденциальности приложения FidRid">
+<meta name="theme-color" content="#05101E">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://svalia.github.io/fidrid-landing/legal/privacy/">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png">
+
+<script>
+// Выбор языка до первой отрисовки, ключ общий с лендингом
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem('fidrid-lang'); } catch (e) {}
+  if (saved !== 'ru' && saved !== 'en') saved = null;
+  var nav = (navigator.languages && navigator.languages[0]) || navigator.language || 'ru';
+  window.__fidridLang = saved || (/^ru/i.test(nav) ? 'ru' : 'en');
+  document.documentElement.lang = window.__fidridLang;
+})();
+</script>
+
+<link rel="stylesheet" href="../../css/golos-embed.css">
+<link rel="stylesheet" href="../../css/tokens/colors.css">
+<link rel="stylesheet" href="../../css/tokens/typography.css">
+<link rel="stylesheet" href="../../css/tokens/layout.css">
+<link rel="stylesheet" href="../legal.css">
+</head>
+<body>
+
+<header>
+  <a class="brand" href="../../">
+    <img src="../../assets/favicon.svg" alt="" width="32" height="32">
+    <span>FidRid</span>
+  </a>
+  <nav>
+    <a class="back" href="../../" data-t="back">На главную</a>
+    <button type="button" id="lang-toggle" data-nolang="1">EN</button>
+  </nav>
+</header>
+
+<main>
+  <article data-lang="ru">
+<h1>Политика конфиденциальности приложения FidRid</h1>
+<p><strong>Редакция от 21 сентября 2026 г. Версия 1.0</strong></p>
+<h2>1. Общие положения</h2>
+<p>1.1. Настоящая Политика конфиденциальности (далее — «Политика») описывает, какие данные обрабатываются при использовании мобильного приложения <strong>FidRid</strong> для iOS (далее — «Приложение»), с какими целями, на каком правовом основании и какие права есть у пользователя.</p>
+<p>1.2. Оператор персональных данных: <strong>Смолин Валентин Владимирович</strong>, физическое лицо, Российская Федерация (далее — «Оператор»). Контакт по вопросам обработки персональных данных: <strong><a href="mailto:taxers.59botanic@icloud.com">taxers.59botanic@icloud.com</a></strong></p>
+<p>1.3. Политика разработана в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных».</p>
+<p>1.4. Политика распространяется на Приложение и не распространяется на сервисы Telegram, сайты и приложения третьих лиц, доступ к которым может быть получен из Приложения.</p>
+<h2>2. Ключевой принцип: обработка на устройстве</h2>
+<p>2.1. FidRid не имеет собственной серверной инфраструктуры для хранения пользовательских данных.</p>
+<p>2.2. Лента формируется <strong>непосредственно на устройстве Пользователя</strong>. Содержимое каналов и сообщений, список каналов, статусы прочтения, папки, фильтры и избранное хранятся в локальной базе данных Приложения в защищённом контейнере iOS.</p>
+<p>2.3. Оператор <strong>не получает, не хранит и не передаёт третьим лицам</strong> содержимое сообщений и публикаций Пользователя, не формирует и не продаёт статистику чтения конкретных каналов.</p>
+<h2>3. Состав обрабатываемых данных</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Категория</th>
+<th>Состав</th>
+<th>Где обрабатывается</th>
+</tr></thead><tbody>
+<tr><td>Данные авторизации Telegram</td><td>номер телефона, одноразовый код подтверждения, облачный пароль (при двухфакторной защите)</td><td>передаются напрямую сервисам Telegram; Оператором не сохраняются</td></tr>
+<tr><td>Ключ сессии</td><td>токен авторизации Telegram</td><td>только локально, в защищённом хранилище устройства</td></tr>
+<tr><td>Содержимое и метаданные каналов</td><td>публикации, медиафайлы, названия и аватары каналов, даты, счётчики</td><td>только локально, на устройстве</td></tr>
+<tr><td>Пользовательские настройки</td><td>папки, фильтры, избранное, внутренние статусы прочтения, настройки уведомлений</td><td>только локально, на устройстве</td></tr>
+<tr><td>Технические данные устройства</td><td>модель устройства, версия iOS, версия Приложения</td><td>передаются в сервис аналитики в обезличенном виде</td></tr>
+<tr><td>Внутренний идентификатор</td><td>обезличенный идентификатор установки Приложения</td><td>передаётся в сервис аналитики</td></tr>
+<tr><td>События использования</td><td>факт запуска Приложения, первый запуск, открытие экранов</td><td>передаются в сервис аналитики</td></tr>
+<tr><td>IP-адрес</td><td>обрабатывается сервисом аналитики в усечённом (обезличенном) виде, без точного определения местоположения</td><td>на стороне сервиса аналитики</td></tr>
+</tbody></table></div>
+<h2>4. Какие данные не обрабатываются</h2>
+<p>Приложение <strong>не собирает и не запрашивает</strong>:</p>
+<ul>
+<li>имя, фамилию, адрес электронной почты, почтовый адрес;</li>
+<li>платёжные и банковские данные (Приложение бесплатное, встроенных покупок нет);</li>
+<li>данные геолокации;</li>
+<li>адресную книгу и списки контактов устройства;</li>
+<li>биометрические данные;</li>
+<li>специальные категории персональных данных (о состоянии здоровья, религиозных или политических убеждениях и т. п.);</li>
+<li>рекламный идентификатор IDFA — Приложение не показывает рекламу и не запрашивает разрешение на межприложенческое отслеживание (ATT);</li>
+<li>содержимое личной переписки Пользователя — личные чаты и группы в Приложение не выводятся.</li>
+</ul>
+<p>Данные Пользователя <strong>не продаются</strong>, не передаются рекламодателям, рекламным сетям и брокерам данных.</p>
+<h2>5. Цели обработки и правовые основания</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Цель</th>
+<th>Данные</th>
+<th>Правовое основание</th>
+</tr></thead><tbody>
+<tr><td>Предоставление функциональности Приложения (авторизация, формирование ленты, уведомления)</td><td>данные авторизации, ключ сессии, содержимое каналов, настройки</td><td>п. 5 ч. 1 ст. 6 152-ФЗ — исполнение договора, стороной которого является субъект</td></tr>
+<tr><td>Анализ работоспособности Приложения, выявление и исправление ошибок</td><td>технические данные, обезличенный идентификатор, события использования</td><td>п. 1 ч. 1 ст. 6 152-ФЗ — согласие субъекта</td></tr>
+<tr><td>Улучшение пользовательского опыта, развитие продукта</td><td>обезличенные события использования</td><td>п. 1 ч. 1 ст. 6 152-ФЗ — согласие субъекта</td></tr>
+<tr><td>Отправка push-уведомлений</td><td>системный push-токен</td><td>п. 1 ч. 1 ст. 6 152-ФЗ — согласие субъекта (разрешение iOS)</td></tr>
+</tbody></table></div>
+<p>Согласие на обработку даётся Пользователем при первом запуске Приложения и может быть отозвано в любой момент (раздел 10).</p>
+<h2>6. Действия с персональными данными</h2>
+<p>В ходе обработки совершаются: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, обезличивание, блокирование, удаление, уничтожение. Обработка осуществляется как автоматизированным, так и неавтоматизированным способом.</p>
+<h2>7. Передача третьим лицам</h2>
+<p>7.1. <strong>Telegram</strong> (правообладатель мессенджера) — при авторизации и получении содержимого каналов данные передаются сервисам Telegram. Их обработка регулируется политикой конфиденциальности Telegram, на которую Оператор не влияет.</p>
+<p>7.2. <strong>Amplitude, Inc.</strong> (США) — сервис продуктовой аналитики. Передаются обезличенные технические данные и события использования. Содержимое сообщений и публикаций в аналитику не передаётся.</p>
+<p>7.3. <strong>Apple Inc.</strong> — распространение Приложения через App Store и доставка push-уведомлений через сервис APNs.</p>
+<p>7.4. Иным лицам данные не передаются, за исключением случаев, прямо предусмотренных законодательством Российской Федерации (по запросу уполномоченных государственных органов в установленном законом порядке).</p>
+<h2>8. Трансграничная передача данных</h2>
+<p>8.1. Сервисы, указанные в пп. 7.2–7.3, расположены за пределами Российской Федерации, в том числе на территории США.</p>
+<p>8.2. В указанные сервисы передаются <strong>только обезличенные данные</strong>, не позволяющие определить конкретного субъекта персональных данных без использования дополнительной информации.</p>
+<p>8.3. Согласие на трансграничную передачу даётся Пользователем в документе «Согласие на обработку персональных данных».</p>
+<h2>9. Хранение и сроки</h2>
+<p>9.1. Данные, обрабатываемые на устройстве, хранятся до удаления Приложения либо до их удаления Пользователем в настройках Приложения. Удаление Приложения влечёт удаление всех локальных данных.</p>
+<p>9.2. Обезличенные аналитические данные хранятся в сервисе аналитики не более <strong>24 месяцев</strong> с момента их получения.</p>
+<p>9.3. Данные авторизации Оператором не хранятся.</p>
+<p>9.4. Локальная база данных Приложения размещается на устройстве Пользователя. Оператор не ведёт баз данных персональных данных граждан Российской Федерации за пределами территории Российской Федерации.</p>
+<h2>10. Права Пользователя</h2>
+<p>10.1. В соответствии со статьёй 14 Федерального закона № 152-ФЗ Пользователь вправе:</p>
+<ul>
+<li>получать сведения об обработке своих персональных данных;</li>
+<li>требовать уточнения, блокирования или уничтожения данных, если они неполны, устарели, неточны или получены незаконно;</li>
+<li>отозвать согласие на обработку;</li>
+<li>обжаловать действия Оператора в Роскомнадзор или в судебном порядке.</li>
+</ul>
+<p>10.2. Практические способы реализации прав:</p>
+<ul>
+<li><strong>отключить аналитику</strong> — в настройках Приложения (раздел конфиденциальности);</li>
+<li><strong>завершить сессию</strong> — в настройках Приложения либо в списке активных сессий Telegram;</li>
+<li><strong>удалить все локальные данные</strong> — удалив Приложение с устройства;</li>
+<li><strong>направить запрос или отозвать согласие</strong> — письмом на <a href="mailto:taxers.59botanic@icloud.com">taxers.59botanic@icloud.com</a>.</li>
+</ul>
+<p>10.3. Срок ответа на запрос — <strong>10 рабочих дней</strong> с момента получения, с возможностью продления не более чем на 5 рабочих дней с уведомлением Пользователя. Уничтожение данных по обоснованному требованию производится в срок, не превышающий 30 календарных дней.</p>
+<h2>11. Безопасность</h2>
+<p>11.1. Взаимодействие с сервисами Telegram осуществляется по защищённому протоколу шифрования.</p>
+<p>11.2. Ключ сессии хранится в защищённом хранилище iOS (Keychain), локальная база данных размещается в изолированном контейнере приложения, доступ к которому ограничен средствами операционной системы.</p>
+<p>11.3. Передача данных в сервис аналитики осуществляется по протоколу HTTPS.</p>
+<p>11.4. Оператор не располагает копиями пользовательских данных, что исключает их утечку на стороне Оператора.</p>
+<h2>12. Дети</h2>
+<p>12.1. Приложение не предназначено для лиц младше 16 лет и не осуществляет осознанного сбора их данных. При обнаружении таких данных они подлежат удалению по обращению законного представителя.</p>
+<h2>13. Изменение Политики</h2>
+<p>13.1. Оператор вправе вносить изменения в Политику. Актуальная редакция публикуется на сайте Приложения с указанием даты.</p>
+<p>13.2. Существенные изменения доводятся до Пользователя при очередном запуске Приложения.</p>
+<h2>14. Контакты</h2>
+<p>По любым вопросам обработки персональных данных и реализации прав субъекта: <strong><a href="mailto:taxers.59botanic@icloud.com">taxers.59botanic@icloud.com</a></strong></p>
+  </article>
+  <article data-lang="en" hidden>
+<h1>FidRid — Privacy Policy</h1>
+<p><strong>Version 1.0 — effective 21 September 2026</strong></p>
+<h2>1. Who we are and what this policy covers</h2>
+<p>1.1. This Privacy Policy explains what data is processed when you use the <strong>FidRid</strong> mobile application for iOS (the &quot;App&quot;), for what purposes, on what legal basis, and what rights you have.</p>
+<p>1.2. <strong>Data controller:</strong> Valentin Smolin, an individual, Russian Federation (the &quot;Developer&quot;, &quot;we&quot;). <strong>Contact for all privacy matters:</strong> <strong><a href="mailto:taxers.59botanic@icloud.com">taxers.59botanic@icloud.com</a></strong></p>
+<p>1.3. This policy is written to meet the requirements of the EU General Data Protection Regulation (GDPR), the UK GDPR, the California Consumer Privacy Act as amended (CCPA/CPRA), and Apple App Store privacy requirements.</p>
+<p>1.4. This policy covers the App only. It does not cover Telegram services, or any third-party website or app you may reach from the App.</p>
+<h2>2. Core principle: processing happens on your device</h2>
+<p>2.1. FidRid operates <strong>no server infrastructure</strong> for storing user data.</p>
+<p>2.2. Your feed is assembled <strong>on your device</strong>. Channel and message content, your channel list, read states, folders, filters and favourites are held in the App&#x27;s local database inside the protected iOS app container.</p>
+<p>2.3. We <strong>do not receive, store or disclose</strong> the content of your messages or posts, and we do not build or sell reading statistics for individual channels.</p>
+<h2>3. What we process</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Category</th>
+<th>Data</th>
+<th>Where processed</th>
+</tr></thead><tbody>
+<tr><td>Telegram authentication data</td><td>phone number, one-time confirmation code, cloud password (if 2FA is enabled)</td><td>sent directly to Telegram services; never stored by us</td></tr>
+<tr><td>Session key</td><td>Telegram authorisation token</td><td>locally only, in secure device storage</td></tr>
+<tr><td>Channel content and metadata</td><td>posts, media, channel names and avatars, dates, counters</td><td>locally only, on your device</td></tr>
+<tr><td>Your settings</td><td>folders, filters, favourites, in-app read states, notification preferences</td><td>locally only, on your device</td></tr>
+<tr><td>Device technical data</td><td>device model, iOS version, App version</td><td>sent to our analytics provider in anonymised form</td></tr>
+<tr><td>Internal identifier</td><td>anonymised App installation identifier</td><td>sent to our analytics provider</td></tr>
+<tr><td>Usage events</td><td>App launch, first launch, screen views</td><td>sent to our analytics provider</td></tr>
+<tr><td>IP address</td><td>processed by the analytics provider in truncated (anonymised) form, without precise location</td><td>at the analytics provider</td></tr>
+</tbody></table></div>
+<h2>4. What we do not collect</h2>
+<p>The App does <strong>not</strong> collect or request:</p>
+<ul>
+<li>your name, email address or postal address;</li>
+<li>payment or banking data (the App is free and has no in-app purchases);</li>
+<li>precise or approximate location data;</li>
+<li>your device address book or contacts;</li>
+<li>biometric data;</li>
+<li>special categories of personal data (health, religious or political beliefs, and similar);</li>
+<li>the advertising identifier (IDFA) — the App shows no ads and does not request App Tracking Transparency permission;</li>
+<li>the content of your private correspondence — private chats and groups are never shown in the App.</li>
+</ul>
+<p>We do <strong>not sell or share</strong> personal information for cross-context behavioural advertising, and we do not disclose data to advertisers, ad networks or data brokers. In the twelve months preceding the date of this policy we have sold or shared no personal information, including that of minors under 16.</p>
+<h2>5. Purposes and legal bases (GDPR Art. 6)</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Purpose</th>
+<th>Data</th>
+<th>Legal basis</th>
+</tr></thead><tbody>
+<tr><td>Providing the App&#x27;s functionality (sign-in, building the feed, notifications)</td><td>authentication data, session key, channel content, settings</td><td>Art. 6(1)(b) — performance of a contract</td></tr>
+<tr><td>Diagnosing and fixing errors, keeping the App working</td><td>device technical data, anonymised identifier, usage events</td><td>Art. 6(1)(a) — consent; alternatively Art. 6(1)(f) — our legitimate interest in a functioning product</td></tr>
+<tr><td>Improving the user experience and developing the product</td><td>anonymised usage events</td><td>Art. 6(1)(a) — consent</td></tr>
+<tr><td>Sending push notifications</td><td>system push token</td><td>Art. 6(1)(a) — consent (iOS permission)</td></tr>
+</tbody></table></div>
+<p>Where processing relies on consent, you may withdraw it at any time; withdrawal does not affect the lawfulness of processing carried out before withdrawal.</p>
+<h2>6. Recipients and processors</h2>
+<p>6.1. <strong>Telegram</strong> (Telegram Messenger Inc. / Telegram FZ-LLC) — receives your authentication data and serves the channel content you request. Telegram acts as an <strong>independent controller</strong> for that processing under its own privacy policy, which we do not influence.</p>
+<p>6.2. <strong>Amplitude, Inc.</strong> (United States) — product analytics provider, acting as our <strong>processor</strong>. It receives anonymised technical data and usage events. It never receives message or post content.</p>
+<p>6.3. <strong>Apple Inc.</strong> — distributes the App through the App Store and delivers push notifications through APNs.</p>
+<p>6.4. We disclose data to no one else, except where we are legally required to do so by a competent authority acting under applicable law.</p>
+<h2>7. International transfers</h2>
+<p>7.1. We are established in the Russian Federation, and our analytics provider is established in the United States. Neither country is the subject of a European Commission adequacy decision.</p>
+<p>7.2. Only <strong>anonymised</strong> data reaches our analytics provider — data that does not allow you to be identified without additional information held separately.</p>
+<p>7.3. Transfers to our analytics provider are made under the European Commission&#x27;s <strong>Standard Contractual Clauses</strong> (GDPR Art. 46(2)(c)), supplemented by the provider&#x27;s own technical safeguards. For UK transfers, the UK International Data Transfer Addendum applies.</p>
+<p>7.4. You may request a copy of the relevant safeguards by writing to the contact address in section 1.</p>
+<h2>8. Retention</h2>
+<p>8.1. Data processed on your device is kept until you delete it in the App or delete the App itself. Deleting the App removes all local data.</p>
+<p>8.2. Anonymised analytics data is retained by the analytics provider for no longer than <strong>24 months</strong> from collection.</p>
+<p>8.3. Authentication data is never retained by us.</p>
+<h2>9. Your rights</h2>
+<p>9.1. Under the GDPR and the UK GDPR you have the right to: access your data; have it rectified; have it erased; restrict its processing; object to processing based on legitimate interests; receive your data in a portable format; withdraw consent; and not be subject to solely automated decision-making with legal or similarly significant effects (we carry out none).</p>
+<p>9.2. Under the CCPA/CPRA, California residents have the right to know, delete and correct personal information, to opt out of sale or sharing (we do neither), to limit the use of sensitive personal information (we process none), and not to be discriminated against for exercising these rights.</p>
+<p>9.3. How to exercise your rights in practice:</p>
+<ul>
+<li><strong>turn analytics off</strong> — in the App&#x27;s privacy settings;</li>
+<li><strong>end the session</strong> — in the App settings or in the Telegram active sessions list;</li>
+<li><strong>delete all local data</strong> — by deleting the App from your device;</li>
+<li><strong>make a request or withdraw consent</strong> — by writing to <a href="mailto:taxers.59botanic@icloud.com">taxers.59botanic@icloud.com</a>.</li>
+</ul>
+<p>9.4. We respond to requests <strong>within one month</strong> of receipt. That period may be extended by up to two further months where a request is complex; we will tell you if that happens. Requests are free of charge unless manifestly unfounded or excessive.</p>
+<p>9.5. Because most data never leaves your device and analytics data is anonymised, we may be unable to identify you from the data we hold (GDPR Art. 11). In that case we will explain this and ask you to supply the App installation identifier shown in the App settings so that we can locate the relevant records.</p>
+<p>9.6. You have the right to lodge a complaint with a supervisory authority — in the EU, the data protection authority of your country of residence, work or of the alleged infringement; in the UK, the Information Commissioner&#x27;s Office (ico.org.uk).</p>
+<h2>10. Security</h2>
+<p>10.1. Communication with Telegram services uses Telegram&#x27;s encrypted transport protocol.</p>
+<p>10.2. The session key is stored in the secure iOS storage (Keychain); the local database sits in the sandboxed app container, access to which is restricted by the operating system.</p>
+<p>10.3. Data sent to the analytics provider travels over HTTPS.</p>
+<p>10.4. We hold no copies of your data, which removes the risk of a breach on our side.</p>
+<h2>11. Children</h2>
+<p>11.1. The App is not intended for anyone under <strong>16</strong> and we do not knowingly collect their data. If such data is identified, it will be deleted upon request from a parent or legal guardian.</p>
+<h2>12. Changes to this policy</h2>
+<p>12.1. We may update this policy. The current version is published on the App&#x27;s website with its effective date.</p>
+<p>12.2. Material changes will be brought to your attention the next time you open the App.</p>
+<h2>13. Contact</h2>
+<p>For any privacy question or to exercise your rights: <strong><a href="mailto:taxers.59botanic@icloud.com">taxers.59botanic@icloud.com</a></strong></p>
+  </article>
+
+  <p class="download">
+    <a id="pdf-link" href="../Privacy_Policy_Ru.pdf" target="_blank" rel="noopener" data-t="pdf">
+      Скачать PDF
+    </a>
+  </p>
+</main>
+
+<footer>
+  <span data-t="disclaimer">FidRid — неофициальный клиент Telegram, не связанный с Telegram LLC.</span>
+  <a href="mailto:taxers.59botanic@icloud.com">taxers.59botanic@icloud.com</a>
+</footer>
+
+<script src="../legal.js"></script>
+</body>
+</html>

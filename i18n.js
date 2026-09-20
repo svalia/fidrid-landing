@@ -140,21 +140,6 @@
     }
   };
 
-  // Юридические документы лежат отдельными файлами на каждом языке.
-  // Чтобы добавить язык или переименовать файл, правится только этот словарь.
-  var DOCS = {
-    ru: {
-      terms: 'Legal/Terms_of_Use_Ru.pdf',
-      privacy: 'Legal/Privacy_Policy_Ru.pdf',
-      processing: 'Legal/Consent_to_Personal_Data_Processing_Ru.pdf'
-    },
-    en: {
-      terms: 'Legal/Terms_of_Use_En.pdf',
-      privacy: 'Legal/Privacy_Policy_En.pdf',
-      processing: 'Legal/Consent_to_Personal_Data_Processing_En.pdf'
-    }
-  };
-
   var STORAGE_KEY = 'fidrid-lang';
   var root = document.getElementById('dc-root') || document.body;
   var originals = null;      // узел -> исходный русский текст
@@ -210,14 +195,6 @@
     }
   }
 
-  function applyDocs(lang) {
-    var links = document.querySelectorAll('[data-doc]');
-    for (var i = 0; i < links.length; i++) {
-      var href = DOCS[lang][links[i].getAttribute('data-doc')];
-      if (href) links[i].setAttribute('href', href);
-    }
-  }
-
   function applyMeta(lang) {
     var meta = META[lang];
     document.title = meta.title;
@@ -245,7 +222,6 @@
     }
 
     document.documentElement.lang = lang;
-    applyDocs(lang);
     applyMeta(lang);
     updateButton();
     document.documentElement.classList.remove('lang-pending');

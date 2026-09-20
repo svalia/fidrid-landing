@@ -1,8 +1,24 @@
-import re, os, json, html
+"""
+Собирает index.html, i18n.js и responsive.css из запечённого макета.
 
-SRC = '/private/tmp/claude-501/-Users-valias-Downloads-FidRid-New/941b4f73-c7e9-4026-b3bc-a4505d7e6706/scratchpad/bake/baked-raw.html'
-OUT = '/private/tmp/claude-501/-Users-valias-Downloads-FidRid-New/941b4f73-c7e9-4026-b3bc-a4505d7e6706/scratchpad/site'
-DS = '_ds/dark-keynote-martech-design-system-7ee32266-c04d-4bc4-9bf6-ea649181985f'
+На вход идёт результат tools/bake.mjs - снятый из браузера DOM артефакта
+Claude Design. Здесь он превращается в готовую страницу: голова с мета-тегами
+и выбором языка, тело без рантайма, словарь для английской версии и адаптив.
+
+Запуск из корня репозитория:
+    node tools/bake.mjs "file://$PWD/source/FidRid Landing.dc.html" build/baked-raw.html
+    python3 tools/assemble.py [путь-к-baked-raw.html]
+"""
+
+import re, os, json, html, sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, 'build', 'baked-raw.html')
+OUT = ROOT
+
+# Дизайн-система приехала из макета в папке с длинным служебным именем;
+# в репозитории она лежит как css/, поэтому ссылки переписываются на неё.
+DS = 'css'
 
 raw = open(SRC, encoding='utf-8').read()
 
@@ -28,17 +44,23 @@ author_css = next((s.strip() for s in styles if 'fr-rise' in s), '')
 
 os.makedirs(OUT, exist_ok=True)
 
-# Ссылки на юридические документы. В разметке макета стояли заглушки-якоря;
-# подменяем их русскими PDF, а data-doc позволяет i18n подставить английские.
-DOC_LINKS = {
-    '#terms': ('terms', 'Legal/Terms_of_Use_Ru.pdf'),
-    '#privacy': ('privacy', 'Legal/Privacy_Policy_Ru.pdf'),
-    '#pdn': ('processing', 'Legal/Consent_to_Personal_Data_Processing_Ru.pdf'),
+# В разметке макета на месте документов стояли заглушки-якоря. Подменяем их
+# страницами документов: язык там выбирается сам, поэтому ссылка одна на оба
+# языка, а PDF предлагается уже внутри страницы.
+SUPPORT_EMAIL = 'taxers.59botanic@icloud.com'
+FOOTER_LINKS = {
+    '#terms': 'legal/terms/',
+    '#privacy': 'legal/privacy/',
+    '#pdn': 'legal/consent/',
 }
-for anchor, (key, path) in DOC_LINKS.items():
-    body = body.replace(
-        'href="%s"' % anchor,
-        'href="%s" data-doc="%s" target="_blank" rel="noopener"' % (path, key))
+for anchor, path in FOOTER_LINKS.items():
+    body = body.replace('href="%s"' % anchor, 'href="%s"' % path)
+
+# Support URL в App Store Connect должен давать способ связаться, поэтому
+# «Поддержка» ведёт на почту, а не на секцию с вопросами.
+body = body.replace(
+    '<a data-dc-tpl="300" href="#faq">Поддержка</a>',
+    '<a data-dc-tpl="300" href="mailto:%s">Поддержка</a>' % SUPPORT_EMAIL)
 
 TITLE_RU = 'FidRid — каналы в ленту'
 TITLE_EN = 'FidRid — channels into a feed'
@@ -156,21 +178,6 @@ i18n = '''/*
     }
   };
 
-  // Юридические документы лежат отдельными файлами на каждом языке.
-  // Чтобы добавить язык или переименовать файл, правится только этот словарь.
-  var DOCS = {
-    ru: {
-      terms: 'Legal/Terms_of_Use_Ru.pdf',
-      privacy: 'Legal/Privacy_Policy_Ru.pdf',
-      processing: 'Legal/Consent_to_Personal_Data_Processing_Ru.pdf'
-    },
-    en: {
-      terms: 'Legal/Terms_of_Use_En.pdf',
-      privacy: 'Legal/Privacy_Policy_En.pdf',
-      processing: 'Legal/Consent_to_Personal_Data_Processing_En.pdf'
-    }
-  };
-
   var STORAGE_KEY = 'fidrid-lang';
   var root = document.getElementById('dc-root') || document.body;
   var originals = null;      // узел -> исходный русский текст
@@ -226,14 +233,6 @@ i18n = '''/*
     }
   }
 
-  function applyDocs(lang) {
-    var links = document.querySelectorAll('[data-doc]');
-    for (var i = 0; i < links.length; i++) {
-      var href = DOCS[lang][links[i].getAttribute('data-doc')];
-      if (href) links[i].setAttribute('href', href);
-    }
-  }
-
   function applyMeta(lang) {
     var meta = META[lang];
     document.title = meta.title;
@@ -261,7 +260,6 @@ i18n = '''/*
     }
 
     document.documentElement.lang = lang;
-    applyDocs(lang);
     applyMeta(lang);
     updateButton();
     document.documentElement.classList.remove('lang-pending');
