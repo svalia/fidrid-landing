@@ -1,0 +1,198 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/core/**",
+              "deck-stage.js",
+              "scroll.js",
+              "ui_kits/workspace/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Golos Text))/i]",
+        "message": "Font not provided by the design system. Available: Golos Text."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|dot|tint|style|key|ref|className|style|children)$/]",
+        "message": "<Badge> doesn't accept that prop. Declared props: children, variant, dot, tint, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:eyebrow|act)$/]",
+        "message": "<Badge> variant must be one of 'eyebrow' | 'act'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|href|onClick|icon|style|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: children, variant, href, onClick, icon, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:round|glass|text)$/]",
+        "message": "<Button> variant must be one of 'round' | 'glass' | 'text'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='GlassCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|elevated|padding|style|key|ref|className|style|children)$/]",
+        "message": "<GlassCard> doesn't accept that prop. Declared props: children, elevated, padding, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|label|gradient|style|key|ref|className|style|children)$/]",
+        "message": "<StatCard> doesn't accept that prop. Declared props: value, label, gradient, style."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Badge": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": []
+      },
+      "GlassCard": {
+        "replaces": []
+      },
+      "StatCard": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--bg",
+      "--bg-2",
+      "--blue",
+      "--blue-2",
+      "--blur-glass",
+      "--border",
+      "--border-faint",
+      "--border-soft",
+      "--cyan",
+      "--cyan-2",
+      "--danger",
+      "--deep-purple",
+      "--ease-soft",
+      "--font-display",
+      "--font-text",
+      "--fw-black",
+      "--fw-bold",
+      "--fw-medium",
+      "--fw-regular",
+      "--fw-semibold",
+      "--glow-purple",
+      "--grad-cta",
+      "--grad-cta-46",
+      "--grad-headline",
+      "--grad-headline-rich",
+      "--grad-muted",
+      "--grad-purple",
+      "--grad-section",
+      "--grad-stat",
+      "--green",
+      "--lilac",
+      "--main",
+      "--maxw",
+      "--maxw-wide",
+      "--pad",
+      "--purple",
+      "--purple-bright",
+      "--purple-soft",
+      "--radius-card",
+      "--radius-pill",
+      "--slate",
+      "--surface-1",
+      "--surface-2",
+      "--surface-3",
+      "--text",
+      "--text-faint",
+      "--text-muted",
+      "--text-subtle"
+    ],
+    "tokenKinds": {
+      "--bg": "color",
+      "--bg-2": "color",
+      "--text": "font",
+      "--text-muted": "font",
+      "--text-subtle": "font",
+      "--text-faint": "font",
+      "--slate": "color",
+      "--main": "color",
+      "--cyan": "color",
+      "--cyan-2": "color",
+      "--blue": "color",
+      "--blue-2": "color",
+      "--purple": "color",
+      "--purple-bright": "color",
+      "--purple-soft": "color",
+      "--lilac": "color",
+      "--deep-purple": "color",
+      "--green": "color",
+      "--danger": "color",
+      "--surface-1": "color",
+      "--surface-2": "color",
+      "--surface-3": "color",
+      "--border": "color",
+      "--border-soft": "color",
+      "--border-faint": "color",
+      "--glow-purple": "color",
+      "--grad-headline": "color",
+      "--grad-headline-rich": "color",
+      "--grad-cta": "color",
+      "--grad-cta-46": "color",
+      "--grad-section": "color",
+      "--grad-purple": "color",
+      "--grad-stat": "color",
+      "--grad-muted": "color",
+      "--font-display": "font",
+      "--font-text": "font",
+      "--fw-regular": "font",
+      "--fw-medium": "font",
+      "--fw-semibold": "font",
+      "--fw-bold": "font",
+      "--fw-black": "font",
+      "--radius-pill": "radius",
+      "--radius-card": "radius",
+      "--blur-glass": "other",
+      "--ease-soft": "other",
+      "--maxw": "spacing",
+      "--maxw-wide": "spacing",
+      "--pad": "spacing"
+    },
+    "fontFamilies": [
+      "Golos Text"
+    ]
+  }
+}

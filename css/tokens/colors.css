@@ -1,0 +1,51 @@
+/* ============================================================
+   tokens/colors.css — Dark Keynote palette
+   Base hues, text ramps, glass surfaces, borders, gradients
+   ============================================================ */
+:root {
+  /* base canvas */
+  --bg:            #05101E;   /* primary near-black navy */
+  --bg-2:          #060d18;   /* deeper panel navy */
+
+  /* text ramp (white @ descending alpha) */
+  --text:          #FFFFFF;
+  --text-muted:    rgba(255,255,255,.70);
+  --text-subtle:   rgba(255,255,255,.45);
+  --text-faint:    rgba(255,255,255,.30);
+  --slate:         #728496;   /* cool grey for neutral marks */
+  --main:          #2AB2F2;   /* legacy primary */
+
+  /* accent hues */
+  --cyan:          #00C6FF;
+  --cyan-2:        #47E4FF;
+  --blue:          #5282FF;
+  --blue-2:        #2596FF;
+  --purple:        #9D8BE7;
+  --purple-bright: #6624FA;
+  --purple-soft:   #C39AF8;
+  --lilac:         #E9D7F6;
+  --deep-purple:   #3C1581;
+  --green:         #2BFDCC;   /* "go" / success / target paths */
+  --danger:        #FF5A5A;
+
+  /* glass surfaces — white @ low alpha over the navy canvas */
+  --surface-1:     rgba(255,255,255,.10);
+  --surface-2:     rgba(255,255,255,.05);
+  --surface-3:     rgba(255,255,255,.025);
+
+  /* borders — white @ alpha, strong → faint */
+  --border:        rgba(255,255,255,.40);
+  --border-soft:   rgba(255,255,255,.10);
+  --border-faint:  rgba(255,255,255,.06);
+  --glow-purple:   rgba(191,128,255,.20);
+
+  /* signature gradients */
+  --grad-headline:      linear-gradient(46deg, #FFF 0%, #FFF 28%, #0476E1 64%, #00D9FF 100%); /* @kind color */
+  --grad-headline-rich: linear-gradient(46deg, #0476E1 0%, #00D9FF 33%, #2596FF 67%, #47E4FF 100%); /* @kind color */
+  --grad-cta:           linear-gradient(315deg, #2BFDCC 0%, #00C6FF 47.56%, #006AFF 100%); /* @kind color */
+  --grad-cta-46:        linear-gradient(46deg, #0476E1 0%, #00D9FF 100%); /* @kind color */
+  --grad-section:       linear-gradient(134deg, #E9D7F6 0%, #6624FA 47.29%, #00D8FF 100%); /* @kind color */
+  --grad-purple:        linear-gradient(315deg, #9983E8 0%, #7036F6 100%); /* @kind color */
+  --grad-stat:          linear-gradient(56deg, #3770ED 5%, #47C9FA 84%); /* @kind color */
+  --grad-muted:         linear-gradient(135deg, #C6C6D2 0%, #9192A6 100%); /* @kind color */
+}

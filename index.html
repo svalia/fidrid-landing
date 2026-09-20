@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FidRid — каналы в ленту</title>
+<meta name="description" content="FidRid забирает телеграм-каналы в отдельную ленту со сторис, фильтрами и своими статусами прочтения. В телеграме остаётся личка. iPhone, бесплатно, без рекламы.">
+<meta name="theme-color" content="#05101E">
+<link rel="canonical" href="https://svalia.github.io/fidrid-landing/">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FidRid">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="FidRid — каналы в ленту">
+<meta property="og:description" content="FidRid забирает телеграм-каналы в отдельную ленту со сторис, фильтрами и своими статусами прочтения. В телеграме остаётся личка. iPhone, бесплатно, без рекламы.">
+<meta property="og:url" content="https://svalia.github.io/fidrid-landing/">
+<meta property="og:image" content="https://svalia.github.io/fidrid-landing/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FidRid — каналы в ленту">
+<meta name="twitter:description" content="FidRid забирает телеграм-каналы в отдельную ленту со сторис, фильтрами и своими статусами прочтения. В телеграме остаётся личка. iPhone, бесплатно, без рекламы.">
+<meta name="twitter:image" content="https://svalia.github.io/fidrid-landing/assets/og-image.png">
+
+<script>
+// Выбор языка до первой отрисовки: сохранённый выбор -> язык браузера -> ru
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem('fidrid-lang'); } catch (e) {}
+  if (saved !== 'ru' && saved !== 'en') saved = null;
+  var nav = (navigator.languages && navigator.languages[0]) || navigator.language || 'ru';
+  var lang = saved || (/^ru/i.test(nav) ? 'ru' : 'en');
+  window.__fidridLang = lang;
+  document.documentElement.lang = lang;
+  if (lang === 'en') {
+    document.documentElement.className += ' lang-pending';
+    // страховка: если i18n.js не загрузился, контент всё равно покажется
+    setTimeout(function () {
+      document.documentElement.classList.remove('lang-pending');
+    }, 1200);
+  }
+})();
+</script>
+<style>html.lang-pending #dc-root { visibility: hidden; }</style>
+
+<link rel="stylesheet" href="css/golos-embed.css">
+<link rel="stylesheet" href="css/tokens/colors.css">
+<link rel="stylesheet" href="css/tokens/typography.css">
+<link rel="stylesheet" href="css/tokens/effects.css">
+<link rel="stylesheet" href="css/tokens/layout.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="responsive.css">
+<style>
+html, body { height: 100%; margin: 0; }
+#dc-root, #dc-root > .sc-host { height: 100%; }
+body { margin: 0; background: #05101E; }
+  a { color: #47E4FF; text-decoration: none; }
+  a:hover { color: #FFFFFF; }
+  @keyframes fr-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.scp0:hover { color: rgb(255, 255, 255) !important; }
+.scp1:hover { border-color: rgba(71, 228, 255, 0.6) !important; }
+</style>
+</head>
+<body>
+<div id="dc-root"><div class="sc-host" data-sc-name="index"><div data-dc-tpl="12" data-screen-label="Лендинг FidRid" style="position: relative; min-height: 100%; background: rgb(5, 16, 30); color: rgb(255, 255, 255); font-family: var(--font-text), 'Golos Text', system-ui, sans-serif; overflow-x: hidden;">
+
+  <div data-dc-tpl="13" aria-hidden="true" style="position: fixed; inset: 0px; pointer-events: none; z-index: 0; background: radial-gradient(620px 520px at 12% 4%, rgba(0, 198, 255, 0.28), transparent 65%), radial-gradient(680px 560px at 88% 82%, rgba(102, 36, 250, 0.26), transparent 65%); filter: blur(60px); opacity: 0.85;"></div>
+
+  <div data-dc-tpl="14" style="position: relative; z-index: 1;">
+
+    <header data-dc-tpl="15" data-el="Z" style="position: sticky; top: 0px; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px clamp(16px, 4vw, 48px); background: rgba(5, 16, 30, 0.72); backdrop-filter: blur(22px); border-bottom: 1px solid var(--border-faint);">
+      <div data-dc-tpl="16" style="display: flex; align-items: center; gap: 10px;">
+        <img data-dc-tpl="17" src="assets/fidrid-mark.svg" alt="FidRid" width="32" height="32" style="width: 32px; height: 32px; border-radius: 9px; display: block;">
+        <span data-dc-tpl="18" style="font-family: var(--font-display); font-weight: 600; font-size: 18px; letter-spacing: -0.02em;">FidRid</span>
+      </div>
+      <nav data-dc-tpl="19" style="display: flex; align-items: center; gap: clamp(14px, 2vw, 28px); font-size: 14px;">
+        <a data-dc-tpl="20" href="#how" class="scp0" style="color: rgba(255, 255, 255, 0.7);">Как работает</a>
+        <a data-dc-tpl="21" href="#safety" class="scp0" style="color: rgba(255, 255, 255, 0.7);">Безопасность</a>
+        <a data-dc-tpl="22" href="#faq" class="scp0" style="color: rgba(255, 255, 255, 0.7);">Вопросы</a>
+        <button data-dc-tpl="23" type="button" data-nolang="1" class="scp1" style="cursor: pointer; font-family: var(--font-display); font-weight: 600; font-size: 13px; letter-spacing: 0.06em; color: rgb(255, 255, 255); padding: 9px 14px; border-radius: var(--radius-pill); border: 1px solid var(--border-soft); background: var(--surface-2); backdrop-filter: blur(20px);"><span class="sc-interp">EN</span></button>
+        <div class="sc-host-x" data-dc-tpl="24" style="display: contents;"><a href="#download" style="font-family: var(--font-display); font-weight: 600; cursor: pointer; text-decoration: none; border: 1px solid var(--border); background: var(--surface-1); display: inline-flex; align-items: center; gap: 9px; color: rgb(255, 255, 255); font-size: 14px; padding: 12px 22px; border-radius: var(--radius-pill); backdrop-filter: blur(20px);">Скачать</a></div>
+      </nav>
+    </header>
+
+    <section data-dc-tpl="25" data-screen-label="Герой" style="max-width: 1220px; margin: 0px auto; padding: clamp(40px, 7vw, 92px) clamp(16px, 4vw, 48px) clamp(48px, 7vw, 96px); display: grid; grid-template-columns: minmax(0px, 1.05fr) minmax(0px, 0.95fr); gap: clamp(28px, 5vw, 64px); align-items: center;">
+      <div data-dc-tpl="26" style="min-width: 0px; animation: 0.9s cubic-bezier(0.16, 0.84, 0.34, 1) 0s 1 normal both running fr-rise;">
+        <div class="sc-host-x" data-dc-tpl="27" style="display: contents;"><span style="display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); padding: 9px 18px; border-radius: var(--radius-pill); border: 1px solid var(--border-soft); background: var(--surface-2); backdrop-filter: blur(20px);"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--grad-cta); box-shadow: rgba(0, 198, 255, 0.8) 0px 0px 12px;"></span>Неофициальный клиент Telegram</span></div>
+        <h1 data-dc-tpl="28" style="margin: 20px 0px 0px; font-family: var(--font-display); font-weight: 600; font-size: clamp(38px, 6.2vw, 74px); line-height: 1.02; letter-spacing: -0.035em; text-wrap: balance;">Каналы&nbsp;— в ленту.<br data-dc-tpl="29"><span data-dc-tpl="30" style="background: linear-gradient(46deg, rgb(4, 118, 225) 0%, rgb(0, 217, 255) 40%, rgb(71, 228, 255) 100%) text; color: transparent;">Телеграм&nbsp;— в покой.</span></h1>
+        <p data-dc-tpl="31" style="margin: 22px 0px 0px; max-width: 46ch; font-size: clamp(16px, 1.6vw, 19px); line-height: 1.55; color: rgba(255, 255, 255, 0.72); text-wrap: pretty;">У вас 300 каналов и одна мама, которая пишет в том же списке. FidRid забирает каналы себе — красивой лентой, как в соцсети. В телеграме остаются люди.</p>
+        <div data-dc-tpl="32" id="download" style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 34px;">
+          <div class="sc-host-x" data-dc-tpl="33" style="display: contents;"><a href="#download" style="font-family: var(--font-display); font-weight: 600; cursor: pointer; text-decoration: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; background: none; display: inline-flex; align-items: center; gap: 14px; color: rgb(255, 255, 255); font-size: 16px;"><span style="width: 56px; height: 56px; border-radius: 50%; background: var(--grad-cta); display: grid; place-items: center; color: rgb(2, 16, 24); font-size: 22px; box-shadow: rgba(0, 150, 255, 0.4) 0px 10px 40px;">↓</span><span>Скачать в App Store</span></a></div>
+          <div data-dc-tpl="34" style="display: flex; align-items: center; gap: 12px;">
+            <img data-dc-tpl="35" src="assets/qr-code.svg" alt="QR-код на страницу приложения в App Store" width="160" height="160" style="width: 160px; height: 160px; border-radius: 14px; background: rgb(255, 255, 255); padding: 8px; display: block;">
+            <span data-dc-tpl="36" style="font-size: 13px; line-height: 1.4; color: rgba(255, 255, 255, 0.5); max-width: 15ch;">Наведите камеру телефона</span>
+          </div>
+          <span data-dc-tpl="37" style="font-size: 14px; color: rgba(255, 255, 255, 0.45);">iPhone · бесплатно · без рекламы</span>
+        </div>
+        <div data-dc-tpl="38" style="display: flex; flex-wrap: wrap; gap: 26px; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--border-faint);">
+          <div data-dc-tpl="39" style="display: flex; flex-direction: column; gap: 4px;"><span data-dc-tpl="40" style="font-family: var(--font-display); font-weight: 600; font-size: 26px; background-image: linear-gradient(56deg, rgb(55, 112, 237) 5%, rgb(71, 201, 250) 84%); background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-clip: text; background-color: ; color: transparent;">2 минуты</span><span data-dc-tpl="41" style="font-size: 13px; color: rgba(255, 255, 255, 0.45);">на настройку с нуля</span></div>
+          <div data-dc-tpl="42" style="display: flex; flex-direction: column; gap: 4px;"><span data-dc-tpl="43" style="font-family: var(--font-display); font-weight: 600; font-size: 26px; background-image: linear-gradient(56deg, rgb(55, 112, 237) 5%, rgb(71, 201, 250) 84%); background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-clip: text; background-color: ; color: transparent;">Вход по коду</span><span data-dc-tpl="44" style="font-size: 13px; color: rgba(255, 255, 255, 0.45);">официальное API, без ботов и паролей</span></div>
+          <div data-dc-tpl="45" style="display: flex; flex-direction: column; gap: 4px;"><span data-dc-tpl="46" style="font-family: var(--font-display); font-weight: 600; font-size: 26px; background-image: linear-gradient(56deg, rgb(55, 112, 237) 5%, rgb(71, 201, 250) 84%); background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-clip: text; background-color: ; color: transparent;">1 список</span><span data-dc-tpl="47" style="font-size: 13px; color: rgba(255, 255, 255, 0.45);">в личке — только люди</span></div>
+        </div>
+      </div>
+
+      <div data-dc-tpl="48" style="display: flex; justify-content: center; min-width: 0px; animation: 1s cubic-bezier(0.16, 0.84, 0.34, 1) 0.12s 1 normal both running fr-rise;">
+        <div data-dc-tpl="49" style="width: 320px; max-width: 100%; flex: 0 0 auto; padding: 11px; border-radius: 52px; background: linear-gradient(160deg, rgb(38, 54, 74) 0%, rgb(11, 21, 34) 60%); border: 1px solid rgba(255, 255, 255, 0.14); box-shadow: rgba(0, 0, 0, 0.6) 0px 50px 130px;">
+          <div data-dc-tpl="50" style="border-radius: 42px; overflow: hidden; background: rgb(255, 255, 255); height: 640px; display: flex; flex-direction: column; color: rgb(0, 0, 0);">
+            <div data-dc-tpl="51" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 24px 6px; font-size: 13px; font-weight: 600;"><span data-dc-tpl="52">9:41</span><span data-dc-tpl="53" style="letter-spacing: 2px; color: rgb(0, 0, 0);">▮▮▮ ᯤ ▰</span></div>
+            <div data-dc-tpl="54" style="display: flex; align-items: center; justify-content: center; position: relative; padding: 8px 16px 12px; font-size: 16px; font-weight: 600;">Лента не прочитанных<span data-dc-tpl="55" style="position: absolute; right: 18px; color: rgb(0, 122, 255); font-size: 17px;">↻</span></div>
+            <div data-dc-tpl="56" style="display: flex; gap: 14px; padding: 10px 14px; overflow: hidden; border-top: 1px solid rgb(236, 236, 239);">
+              <div data-dc-tpl="57" style="display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 0 0 auto; width: 62px;"><span data-dc-tpl="58" style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, rgb(123, 215, 255), rgb(42, 123, 234)); border: 2.5px solid rgb(169, 123, 240); display: grid; place-items: center; color: rgb(255, 255, 255); font-weight: 700; font-size: 20px;">П</span><span data-dc-tpl="59" style="font-size: 10px; color: rgb(60, 60, 67); max-width: 62px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Пиксель и…</span></div>
+              <div data-dc-tpl="60" style="display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 0 0 auto; width: 62px;"><span data-dc-tpl="61" style="width: 56px; height: 56px; border-radius: 50%; background: rgb(22, 24, 28); border: 2.5px solid rgb(169, 123, 240); display: grid; place-items: center; color: rgb(255, 255, 255); font-weight: 700; font-size: 20px;">С</span><span data-dc-tpl="62" style="font-size: 10px; color: rgb(60, 60, 67); max-width: 62px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Сухая выж…</span></div>
+              <div data-dc-tpl="63" style="display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 0 0 auto; width: 62px;"><span data-dc-tpl="64" style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, rgb(58, 227, 182), rgb(22, 169, 127)); border: 2.5px solid rgb(169, 123, 240); display: grid; place-items: center; color: rgb(255, 255, 255); font-weight: 700; font-size: 20px;">З</span><span data-dc-tpl="65" style="font-size: 10px; color: rgb(60, 60, 67); max-width: 62px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Зона турб…</span></div>
+              <div data-dc-tpl="66" style="display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 0 0 auto; width: 62px;"><span data-dc-tpl="67" style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, rgb(255, 179, 107), rgb(232, 106, 58)); border: 2.5px solid rgb(169, 123, 240); display: grid; place-items: center; color: rgb(255, 255, 255); font-weight: 700; font-size: 20px;">К</span><span data-dc-tpl="68" style="font-size: 10px; color: rgb(60, 60, 67); max-width: 62px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Кофе в 7:00</span></div>
+            </div>
+            <div data-dc-tpl="69" style="display: flex; gap: 8px; padding: 4px 14px 12px; overflow: hidden; border-bottom: 1px solid rgb(236, 236, 239);">
+              <span data-dc-tpl="70" style="flex: 0 0 auto; padding: 8px 16px; border-radius: 20px; background: rgb(0, 122, 255); color: rgb(255, 255, 255); font-size: 14px; font-weight: 600;">Все 1 241</span>
+              <span data-dc-tpl="71" style="flex: 0 0 auto; padding: 8px 16px; border-radius: 20px; background: rgb(239, 239, 243); color: rgb(28, 28, 30); font-size: 14px;">Работа</span>
+              <span data-dc-tpl="72" style="flex: 0 0 auto; padding: 8px 16px; border-radius: 20px; background: rgb(239, 239, 243); color: rgb(28, 28, 30); font-size: 14px;">Новости</span>
+            </div>
+            <div data-dc-tpl="73" style="flex: 1 1 0%; overflow: hidden; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px;">
+              <div data-dc-tpl="74" style="display: flex; align-items: center; gap: 10px;"><span data-dc-tpl="75" style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, rgb(123, 215, 255), rgb(42, 123, 234)); display: grid; place-items: center; color: rgb(255, 255, 255); font-weight: 700; font-size: 13px;">П</span><span data-dc-tpl="76" style="font-weight: 600; font-size: 15px;">Пиксель и точка</span><span data-dc-tpl="77" style="margin-left: auto; color: rgb(138, 138, 142);">•••</span></div>
+              <div data-dc-tpl="78" style="border-radius: 12px; overflow: hidden; background: linear-gradient(135deg, rgb(18, 33, 58) 0%, rgb(53, 80, 127) 55%, rgb(109, 79, 176) 100%); height: 150px; display: flex; align-items: flex-end; padding: 14px;"><span data-dc-tpl="79" style="color: rgb(255, 255, 255); font-weight: 600; font-size: 15px; line-height: 1.25;">Что не так с сеткой<br data-dc-tpl="80">в мобильных лентах</span></div>
+              <p data-dc-tpl="81" style="margin: 0px; font-size: 14.5px; line-height: 1.45; color: rgb(28, 28, 30);"><b data-dc-tpl="82">Разбор на пальцах.</b> Почему 4 колонки на телефоне — это боль, а 2 — нет. С примерами и линейкой.</p>
+              <div data-dc-tpl="83" style="display: flex; align-items: center; gap: 16px; font-size: 13px; color: rgb(138, 138, 142);"><span data-dc-tpl="84">4 часа назад</span><span data-dc-tpl="85" style="margin-left: auto; display: flex; gap: 14px; font-size: 15px;"><span data-dc-tpl="86">↗</span><span data-dc-tpl="87">⤴</span><span data-dc-tpl="88">♡</span></span></div>
+            </div>
+            <div data-dc-tpl="89" style="display: flex; padding: 8px 0px 18px; border-top: 1px solid rgb(236, 236, 239); background: rgb(251, 251, 253);">
+              <div data-dc-tpl="90" style="flex: 1 1 0%; min-width: 0px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; white-space: nowrap; gap: 3px; color: rgb(0, 122, 255); font-size: 10px;"><span data-dc-tpl="91" style="font-size: 17px;">▤</span>Лента</div>
+              <div data-dc-tpl="92" style="flex: 1 1 0%; min-width: 0px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; white-space: nowrap; gap: 3px; color: rgb(138, 138, 142); font-size: 10px;"><span data-dc-tpl="93" style="font-size: 17px;">@</span>Каналы</div>
+              <div data-dc-tpl="94" style="flex: 1 1 0%; min-width: 0px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; white-space: nowrap; gap: 3px; color: rgb(138, 138, 142); font-size: 10px;"><span data-dc-tpl="95" style="font-size: 17px;">⚙</span>Настройки</div>
+              <div data-dc-tpl="96" style="flex: 1 1 0%; min-width: 0px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; white-space: nowrap; gap: 3px; color: rgb(138, 138, 142); font-size: 10px;"><span data-dc-tpl="97" style="font-size: 17px;">◍</span>Профиль</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-dc-tpl="98" data-screen-label="До и после" style="max-width: 1220px; margin: 0px auto; padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 48px);">
+      <h2 data-dc-tpl="99" style="margin: 0px; font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 4vw, 48px); letter-spacing: -0.03em; line-height: 1.08; text-wrap: balance;">Один список не может быть и мессенджером, и медиа</h2>
+      <p data-dc-tpl="100" style="margin: 14px 0px 0px; max-width: 58ch; font-size: 17px; line-height: 1.5; color: rgba(255, 255, 255, 0.7);">Каналы кричат громче людей — просто потому, что их больше. Разводим их по разным приложениям.</p>
+      <div data-dc-tpl="101" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 34px;">
+        <div data-dc-tpl="102" style="border-radius: 28px; border: 1px solid rgba(255, 90, 90, 0.28); background: rgba(255, 90, 90, 0.05); padding: 26px;">
+          <div data-dc-tpl="103" style="display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(255, 138, 138);"><span data-dc-tpl="104" style="width: 7px; height: 7px; border-radius: 50%; background: rgb(255, 90, 90);"></span>До</div>
+          <div data-dc-tpl="105" style="display: flex; flex-direction: column; gap: 10px; margin-top: 18px;">
+            <div data-dc-tpl="106" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; background: rgba(255, 255, 255, 0.04);"><span data-dc-tpl="107" style="width: 34px; height: 34px; border-radius: 50%; background: rgb(59, 74, 96); display: grid; place-items: center; font-size: 13px; font-weight: 600;">С</span><span data-dc-tpl="108" style="flex: 1 1 0%; min-width: 0px;"><span data-dc-tpl="109" style="display: block; font-size: 14px; font-weight: 600;">Сухая выжимка</span><span data-dc-tpl="110" style="display: block; font-size: 12.5px; color: rgba(255, 255, 255, 0.45); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Дайджест за среду: 14 пунктов</span></span><span data-dc-tpl="111" style="padding: 2px 8px; border-radius: 10px; background: rgb(255, 90, 90); font-size: 11px; font-weight: 700;">214</span></div>
+            <div data-dc-tpl="112" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; background: rgba(255, 255, 255, 0.04);"><span data-dc-tpl="113" style="width: 34px; height: 34px; border-radius: 50%; background: rgb(59, 74, 96); display: grid; place-items: center; font-size: 13px; font-weight: 600;">З</span><span data-dc-tpl="114" style="flex: 1 1 0%; min-width: 0px;"><span data-dc-tpl="115" style="display: block; font-size: 14px; font-weight: 600;">Зона турбулентности</span><span data-dc-tpl="116" style="display: block; font-size: 12.5px; color: rgba(255, 255, 255, 0.45); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Срочно: ещё одна срочная новость</span></span><span data-dc-tpl="117" style="padding: 2px 8px; border-radius: 10px; background: rgb(255, 90, 90); font-size: 11px; font-weight: 700;">98</span></div>
+            <div data-dc-tpl="118" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.14);"><span data-dc-tpl="119" style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, rgb(240, 166, 192), rgb(192, 103, 154)); display: grid; place-items: center; font-size: 13px; font-weight: 600;">М</span><span data-dc-tpl="120" style="flex: 1 1 0%; min-width: 0px;"><span data-dc-tpl="121" style="display: block; font-size: 14px; font-weight: 600;">Мама</span><span data-dc-tpl="122" style="display: block; font-size: 12.5px; color: rgba(255, 255, 255, 0.55); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Ты поел? Позвони, пожалуйста</span></span><span data-dc-tpl="123" style="padding: 2px 8px; border-radius: 10px; background: rgba(255, 255, 255, 0.2); font-size: 11px; font-weight: 700;">2</span></div>
+            <div data-dc-tpl="124" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; background: rgba(255, 255, 255, 0.04);"><span data-dc-tpl="125" style="width: 34px; height: 34px; border-radius: 50%; background: rgb(59, 74, 96); display: grid; place-items: center; font-size: 13px; font-weight: 600;">Н</span><span data-dc-tpl="126" style="flex: 1 1 0%; min-width: 0px;"><span data-dc-tpl="127" style="display: block; font-size: 14px; font-weight: 600;">Ночная смена</span><span data-dc-tpl="128" style="display: block; font-size: 12.5px; color: rgba(255, 255, 255, 0.45); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Пост, который вы точно пролистаете</span></span><span data-dc-tpl="129" style="padding: 2px 8px; border-radius: 10px; background: rgb(255, 90, 90); font-size: 11px; font-weight: 700;">431</span></div>
+          </div>
+          <p data-dc-tpl="130" style="margin: 18px 0px 0px; font-size: 14px; line-height: 1.45; color: rgba(255, 255, 255, 0.55);">Мама лежит между двумя дайджестами. Найти её — квест.</p>
+        </div>
+        <div data-dc-tpl="131" style="border-radius: 28px; border: 1px solid rgba(43, 253, 204, 0.3); background: rgba(43, 253, 204, 0.05); padding: 26px;">
+          <div data-dc-tpl="132" style="display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(43, 253, 204);"><span data-dc-tpl="133" style="width: 7px; height: 7px; border-radius: 50%; background: rgb(43, 253, 204);"></span>После</div>
+          <div data-dc-tpl="134" style="display: flex; flex-direction: column; gap: 10px; margin-top: 18px;">
+            <div data-dc-tpl="135" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; background: rgba(255, 255, 255, 0.07);"><span data-dc-tpl="136" style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, rgb(240, 166, 192), rgb(192, 103, 154)); display: grid; place-items: center; font-size: 13px; font-weight: 600;">М</span><span data-dc-tpl="137" style="flex: 1 1 0%; min-width: 0px;"><span data-dc-tpl="138" style="display: block; font-size: 14px; font-weight: 600;">Мама</span><span data-dc-tpl="139" style="display: block; font-size: 12.5px; color: rgba(255, 255, 255, 0.5); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Ты поел? Позвони, пожалуйста</span></span><span data-dc-tpl="140" style="padding: 2px 8px; border-radius: 10px; background: rgb(43, 253, 204); color: rgb(5, 16, 30); font-size: 11px; font-weight: 700;">2</span></div>
+            <div data-dc-tpl="141" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; background: rgba(255, 255, 255, 0.07);"><span data-dc-tpl="142" style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, rgb(143, 183, 255), rgb(74, 111, 208)); display: grid; place-items: center; font-size: 13px; font-weight: 600;">К</span><span data-dc-tpl="143" style="flex: 1 1 0%; min-width: 0px;"><span data-dc-tpl="144" style="display: block; font-size: 14px; font-weight: 600;">Костя Л.</span><span data-dc-tpl="145" style="display: block; font-size: 12.5px; color: rgba(255, 255, 255, 0.5); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Скинул смету, глянь вечером</span></span></div>
+            <div data-dc-tpl="146" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; background: rgba(255, 255, 255, 0.07);"><span data-dc-tpl="147" style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, rgb(185, 227, 168), rgb(111, 166, 92)); display: grid; place-items: center; font-size: 13px; font-weight: 600;">Р</span><span data-dc-tpl="148" style="flex: 1 1 0%; min-width: 0px;"><span data-dc-tpl="149" style="display: block; font-size: 14px; font-weight: 600;">Ремонт, 4 участника</span><span data-dc-tpl="150" style="display: block; font-size: 12.5px; color: rgba(255, 255, 255, 0.5); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Плитку привезут в четверг</span></span></div>
+            <div data-dc-tpl="151" style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 12px; border-radius: 14px; border: 1px dashed rgba(43, 253, 204, 0.35); font-size: 13.5px; color: rgba(255, 255, 255, 0.62);">87 каналов уехали в FidRid</div>
+          </div>
+          <p data-dc-tpl="152" style="margin: 18px 0px 0px; font-size: 14px; line-height: 1.45; color: rgba(255, 255, 255, 0.55);">Каналы никуда не делись — они замьючены и в архиве. И читаются отдельно.</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-dc-tpl="153" id="how" data-screen-label="Как это работает" style="max-width: 1220px; margin: 0px auto; padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 48px); display: grid; grid-template-columns: minmax(0px, 1fr) minmax(0px, 0.8fr); gap: clamp(28px, 5vw, 64px); align-items: center;">
+      <div data-dc-tpl="154" style="min-width: 0px;">
+        <div class="sc-host-x" data-dc-tpl="155" style="display: contents;"><span style="display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); padding: 9px 18px; border-radius: var(--radius-pill); border: 1px solid var(--border-soft); background: var(--surface-2); backdrop-filter: blur(20px);"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--grad-cta); box-shadow: rgba(0, 198, 255, 0.8) 0px 0px 12px;"></span>Три шага</span></div>
+        <h2 data-dc-tpl="156" style="margin: 18px 0px 0px; font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 4vw, 48px); letter-spacing: -0.03em; line-height: 1.08; text-wrap: balance;">Настройка короче, чем один дайджест</h2>
+        <div data-dc-tpl="157" style="display: flex; flex-direction: column; gap: 18px; margin-top: 30px;">
+          <div data-dc-tpl="158" style="display: flex; gap: 18px; align-items: flex-start;">
+            <span data-dc-tpl="159" style="flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-soft); background: var(--surface-2); display: grid; place-items: center; font-family: var(--font-display); font-weight: 600; font-size: 16px;">1</span>
+            <div data-dc-tpl="160"><div data-dc-tpl="161" style="font-family: var(--font-display); font-weight: 600; font-size: 19px; letter-spacing: -0.01em;">Входите под своим аккаунтом</div><p data-dc-tpl="162" style="margin: 6px 0px 0px; font-size: 15.5px; line-height: 1.5; color: rgba(255, 255, 255, 0.65); max-width: 44ch;">Обычный вход по коду через официальное API. Никаких ботов, пересылок и «дай логин от аккаунта».</p></div>
+          </div>
+          <div data-dc-tpl="163" style="display: flex; gap: 18px; align-items: flex-start;">
+            <span data-dc-tpl="164" style="flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-soft); background: var(--surface-2); display: grid; place-items: center; font-family: var(--font-display); font-weight: 600; font-size: 16px;">2</span>
+            <div data-dc-tpl="165"><div data-dc-tpl="166" style="font-family: var(--font-display); font-weight: 600; font-size: 19px; letter-spacing: -0.01em;">Отмечаете, что читать</div><p data-dc-tpl="167" style="margin: 6px 0px 0px; font-size: 15.5px; line-height: 1.5; color: rgba(255, 255, 255, 0.65); max-width: 44ch;">Список всех ваших каналов с тумблерами и поиском. Нужные — в ленту, остальные оставьте как есть.</p></div>
+          </div>
+          <div data-dc-tpl="168" style="display: flex; gap: 18px; align-items: flex-start;">
+            <span data-dc-tpl="169" style="flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-soft); background: var(--surface-2); display: grid; place-items: center; font-family: var(--font-display); font-weight: 600; font-size: 16px;">3</span>
+            <div data-dc-tpl="170"><div data-dc-tpl="171" style="font-family: var(--font-display); font-weight: 600; font-size: 19px; letter-spacing: -0.01em;">Жмёте «замьютить и в архив»</div><p data-dc-tpl="172" style="margin: 6px 0px 0px; font-size: 15.5px; line-height: 1.5; color: rgba(255, 255, 255, 0.65); max-width: 44ch;">Одним действием сразу для всех выбранных. Телеграм пустеет, лента наполняется. Откатить можно тем же тумблером.</p></div>
+          </div>
+        </div>
+      </div>
+      <div data-dc-tpl="173" style="display: flex; justify-content: center; min-width: 0px;">
+        <div data-dc-tpl="174" style="width: 300px; max-width: 100%; flex: 0 0 auto; padding: 10px; border-radius: 48px; background: linear-gradient(160deg, rgb(38, 54, 74) 0%, rgb(11, 21, 34) 60%); border: 1px solid rgba(255, 255, 255, 0.14); box-shadow: rgba(0, 0, 0, 0.6) 0px 50px 130px;">
+          <div data-dc-tpl="175" style="border-radius: 39px; overflow: hidden; background: rgb(255, 255, 255); height: 600px; display: flex; flex-direction: column; color: rgb(0, 0, 0);">
+            <div data-dc-tpl="176" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 22px 4px; font-size: 12.5px; font-weight: 600;"><span data-dc-tpl="177">9:41</span><span data-dc-tpl="178" style="letter-spacing: 2px;">▮▮▮ ᯤ ▰</span></div>
+            <div data-dc-tpl="179" style="text-align: center; padding: 6px 16px 12px; font-size: 16px; font-weight: 600;">Каналы</div>
+            <div data-dc-tpl="180" style="padding: 0px 14px 10px;"><div data-dc-tpl="181" style="display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 11px; background: rgb(239, 239, 243); color: rgb(138, 138, 142); font-size: 14px;">⌕ Поиск каналов</div></div>
+            <div data-dc-tpl="182" style="display: flex; align-items: center; justify-content: space-between; padding: 0px 16px 10px; font-size: 14px; color: rgb(0, 122, 255); font-weight: 500;"><span data-dc-tpl="183">✓ Массовые действия</span><span data-dc-tpl="184">Показывать все</span></div>
+            <div data-dc-tpl="185" style="flex: 1 1 0%; overflow: hidden; display: flex; flex-direction: column; gap: 9px; padding: 0px 12px;">
+              <div data-dc-tpl="186" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 14px; background: rgb(242, 242, 247);"><span data-dc-tpl="187" style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, rgb(123, 215, 255), rgb(42, 123, 234)); display: grid; place-items: center; color: rgb(255, 255, 255); font-weight: 700;">П</span><span data-dc-tpl="188" style="flex: 1 1 0%; font-size: 15px; font-weight: 500;">Пиксель и точка</span><span data-dc-tpl="189" style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;"><span data-dc-tpl="190" style="width: 44px; height: 26px; border-radius: 13px; background: rgb(52, 199, 89); position: relative;"><span data-dc-tpl="191" style="position: absolute; top: 2px; right: 2px; width: 22px; height: 22px; border-radius: 50%; background: rgb(255, 255, 255);"></span></span><span data-dc-tpl="192" style="font-size: 11px; color: rgb(138, 138, 142);">⌀ #1</span></span></div>
+              <div data-dc-tpl="193" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 14px; background: rgb(242, 242, 247);"><span data-dc-tpl="194" style="width: 40px; height: 40px; border-radius: 50%; background: rgb(22, 24, 28); display: grid; place-items: center; color: rgb(255, 255, 255); font-weight: 700;">С</span><span data-dc-tpl="195" style="flex: 1 1 0%; font-size: 15px; font-weight: 500;">Сухая выжимка</span><span data-dc-tpl="196" style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;"><span data-dc-tpl="197" style="width: 44px; height: 26px; border-radius: 13px; background: rgb(52, 199, 89); position: relative;"><span data-dc-tpl="198" style="position: absolute; top: 2px; right: 2px; width: 22px; height: 22px; border-radius: 50%; background: rgb(255, 255, 255);"></span></span><span data-dc-tpl="199" style="font-size: 11px; color: rgb(138, 138, 142);">▤ ⌀ #2</span></span></div>
+              <div data-dc-tpl="200" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 14px; background: rgb(242, 242, 247);"><span data-dc-tpl="201" style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, rgb(58, 227, 182), rgb(22, 169, 127)); display: grid; place-items: center; color: rgb(255, 255, 255); font-weight: 700;">З</span><span data-dc-tpl="202" style="flex: 1 1 0%; font-size: 15px; font-weight: 500;">Зона турбулентности</span><span data-dc-tpl="203" style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;"><span data-dc-tpl="204" style="width: 44px; height: 26px; border-radius: 13px; background: rgb(228, 228, 233); position: relative;"><span data-dc-tpl="205" style="position: absolute; top: 2px; left: 2px; width: 22px; height: 22px; border-radius: 50%; background: rgb(255, 255, 255);"></span></span><span data-dc-tpl="206" style="font-size: 11px; color: rgb(138, 138, 142);">#3</span></span></div>
+              <div data-dc-tpl="207" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 14px; background: rgb(242, 242, 247);"><span data-dc-tpl="208" style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, rgb(255, 179, 107), rgb(232, 106, 58)); display: grid; place-items: center; color: rgb(255, 255, 255); font-weight: 700;">К</span><span data-dc-tpl="209" style="flex: 1 1 0%; font-size: 15px; font-weight: 500;">Кофе в 7:00</span><span data-dc-tpl="210" style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;"><span data-dc-tpl="211" style="width: 44px; height: 26px; border-radius: 13px; background: rgb(52, 199, 89); position: relative;"><span data-dc-tpl="212" style="position: absolute; top: 2px; right: 2px; width: 22px; height: 22px; border-radius: 50%; background: rgb(255, 255, 255);"></span></span><span data-dc-tpl="213" style="font-size: 11px; color: rgb(138, 138, 142);">▤ ⌀ #4</span></span></div>
+              <div data-dc-tpl="214" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 14px; background: rgb(242, 242, 247);"><span data-dc-tpl="215" style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, rgb(201, 166, 245), rgb(122, 79, 208)); display: grid; place-items: center; color: rgb(255, 255, 255); font-weight: 700;">Т</span><span data-dc-tpl="216" style="flex: 1 1 0%; font-size: 15px; font-weight: 500;">Тихий бэклог</span><span data-dc-tpl="217" style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;"><span data-dc-tpl="218" style="width: 44px; height: 26px; border-radius: 13px; background: rgb(228, 228, 233); position: relative;"><span data-dc-tpl="219" style="position: absolute; top: 2px; left: 2px; width: 22px; height: 22px; border-radius: 50%; background: rgb(255, 255, 255);"></span></span><span data-dc-tpl="220" style="font-size: 11px; color: rgb(138, 138, 142);">#5</span></span></div>
+            </div>
+            <div data-dc-tpl="221" style="display: flex; padding: 8px 0px 16px; border-top: 1px solid rgb(236, 236, 239); background: rgb(251, 251, 253);">
+              <div data-dc-tpl="222" style="flex: 1 1 0%; min-width: 0px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; white-space: nowrap; gap: 3px; color: rgb(138, 138, 142); font-size: 10px;"><span data-dc-tpl="223" style="font-size: 17px;">▤</span>Лента</div>
+              <div data-dc-tpl="224" style="flex: 1 1 0%; min-width: 0px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; white-space: nowrap; gap: 3px; color: rgb(0, 122, 255); font-size: 10px;"><span data-dc-tpl="225" style="font-size: 17px;">@</span>Каналы</div>
+              <div data-dc-tpl="226" style="flex: 1 1 0%; min-width: 0px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; white-space: nowrap; gap: 3px; color: rgb(138, 138, 142); font-size: 10px;"><span data-dc-tpl="227" style="font-size: 17px;">⚙</span>Настройки</div>
+              <div data-dc-tpl="228" style="flex: 1 1 0%; min-width: 0px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; white-space: nowrap; gap: 3px; color: rgb(138, 138, 142); font-size: 10px;"><span data-dc-tpl="229" style="font-size: 17px;">◍</span>Профиль</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-dc-tpl="230" data-screen-label="Возможности" style="max-width: 1220px; margin: 0px auto; padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 48px);">
+      <h2 data-dc-tpl="231" style="margin: 0px; font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 4vw, 48px); letter-spacing: -0.03em; line-height: 1.08; text-wrap: balance;">Лента, которая ведёт себя как лента</h2>
+      <div data-dc-tpl="232" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 34px;">
+        <div data-dc-tpl="233" style="border-radius: 28px; border: 1px solid var(--border-soft); background: var(--surface-2); backdrop-filter: blur(20px); padding: 28px;">
+          <div data-dc-tpl="234" style="font-family: var(--font-display); font-weight: 600; font-size: 20px; letter-spacing: -0.02em;">Сторис из каналов</div>
+          <p data-dc-tpl="235" style="margin: 10px 0px 0px; font-size: 15px; line-height: 1.5; color: rgba(255, 255, 255, 0.65);">Кто написал за последние часы — кружками сверху. Пролистать пять каналов быстрее, чем открыть один чат.</p>
+        </div>
+        <div data-dc-tpl="236" style="border-radius: 28px; border: 1px solid var(--border-soft); background: var(--surface-2); backdrop-filter: blur(20px); padding: 28px;">
+          <div data-dc-tpl="237" style="font-family: var(--font-display); font-weight: 600; font-size: 20px; letter-spacing: -0.02em;">Фильтры и папки</div>
+          <p data-dc-tpl="238" style="margin: 10px 0px 0px; font-size: 15px; line-height: 1.5; color: rgba(255, 255, 255, 0.65);">«Работа» отдельно, «Новости» отдельно. Утром — рабочее, вечером — всё остальное.</p>
+        </div>
+        <div data-dc-tpl="239" style="border-radius: 28px; border: 1px solid var(--border-soft); background: var(--surface-2); backdrop-filter: blur(20px); padding: 28px;">
+          <div data-dc-tpl="240" style="font-family: var(--font-display); font-weight: 600; font-size: 20px; letter-spacing: -0.02em;">Свои статусы прочтения</div>
+          <p data-dc-tpl="241" style="margin: 10px 0px 0px; font-size: 15px; line-height: 1.5; color: rgba(255, 255, 255, 0.65);">Пост непрочитан, пока вы его не увидели здесь. Счётчик в телеграме при этом молчит.</p>
+        </div>
+        <div data-dc-tpl="242" style="border-radius: 28px; border: 1px solid var(--border-soft); background: var(--surface-2); backdrop-filter: blur(20px); padding: 28px;">
+          <div data-dc-tpl="243" style="font-family: var(--font-display); font-weight: 600; font-size: 20px; letter-spacing: -0.02em;">Массовые действия</div>
+          <p data-dc-tpl="244" style="margin: 10px 0px 0px; font-size: 15px; line-height: 1.5; color: rgba(255, 255, 255, 0.65);">Замьютить и заархивировать 80 каналов разом. Вручную это вечер жизни.</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-dc-tpl="245" id="safety" data-screen-label="Безопасность" style="max-width: 1220px; margin: 0px auto; padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 48px);">
+      <div class="sc-host-x" data-dc-tpl="246" style="display: contents;"><span style="display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); padding: 9px 18px; border-radius: var(--radius-pill); border: 1px solid var(--border-soft); background: var(--surface-2); backdrop-filter: blur(20px);"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--grad-cta); box-shadow: rgba(0, 198, 255, 0.8) 0px 0px 12px;"></span>Честно про доступ</span></div>
+      <h2 data-dc-tpl="247" style="margin: 18px 0px 0px; font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 4vw, 48px); letter-spacing: -0.03em; line-height: 1.08; text-wrap: balance;">Вы пускаете приложение в свой аккаунт. Вот что оно там делает</h2>
+      <div data-dc-tpl="248" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-top: 32px;">
+        <div data-dc-tpl="249" style="border-radius: 24px; border: 1px solid var(--border-soft); background: var(--surface-3); padding: 24px;"><div data-dc-tpl="250" style="font-size: 16px; font-weight: 600; font-family: var(--font-display);">Официальное API</div><p data-dc-tpl="251" style="margin: 8px 0px 0px; font-size: 14.5px; line-height: 1.5; color: rgba(255, 255, 255, 0.62);">Тот же протокол, на котором работают все сторонние клиенты телеграма. Пароль вы вводите не нам, а в окно входа телеграма.</p></div>
+        <div data-dc-tpl="252" style="border-radius: 24px; border: 1px solid var(--border-soft); background: var(--surface-3); padding: 24px;"><div data-dc-tpl="253" style="font-size: 16px; font-weight: 600; font-family: var(--font-display);">Аккаунт не под угрозой</div><p data-dc-tpl="254" style="margin: 8px 0px 0px; font-size: 14.5px; line-height: 1.5; color: rgba(255, 255, 255, 0.62);">Мы не рассылаем, не вступаем в каналы и не пишем от вашего имени. Всё, что делает FidRid, — читает и выключает уведомления там, где вы попросили.</p></div>
+        <div data-dc-tpl="255" style="grid-column: 1 / -1; order: -1; border-radius: 28px; border: 1px solid rgba(43, 253, 204, 0.35); background: rgba(43, 253, 204, 0.06); padding: clamp(24px, 3vw, 34px); display: flex; flex-wrap: wrap; align-items: center; gap: clamp(18px, 3vw, 36px);"><div data-dc-tpl="256" style="flex: 1 1 260px; min-width: 0px;"><div data-dc-tpl="257" style="display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(43, 253, 204);"><span data-dc-tpl="258" style="width: 7px; height: 7px; border-radius: 50%; background: rgb(43, 253, 204);"></span>Главное</div><div data-dc-tpl="259" style="margin-top: 12px; font-family: var(--font-display); font-weight: 600; font-size: clamp(22px, 2.6vw, 32px); letter-spacing: -0.025em; line-height: 1.12;">Ваши сообщения не покидают телефон</div></div><p data-dc-tpl="260" style="flex: 1 1 280px; margin: 0px; font-size: 16px; line-height: 1.55; color: rgba(255, 255, 255, 0.75); max-width: 48ch;">Лента собирается <b data-dc-tpl="261" style="color: rgb(255, 255, 255); font-weight: 600;">на устройстве</b>. Мы не храним ваши сообщения на сервере, не пересылаем их третьим лицам и не продаём статистику чтения — её просто негде взять.</p></div>
+        <div data-dc-tpl="262" style="border-radius: 24px; border: 1px solid var(--border-soft); background: var(--surface-3); padding: 24px;"><div data-dc-tpl="263" style="font-size: 16px; font-weight: 600; font-family: var(--font-display);">Ничего не теряется</div><p data-dc-tpl="264" style="margin: 8px 0px 0px; font-size: 14.5px; line-height: 1.5; color: rgba(255, 255, 255, 0.62);">Мьют и архив — штатные функции телеграма. Каналы остаются на месте, посты никуда не деваются, вернуть всё можно одним тумблером.</p></div>
+      </div>
+    </section>
+
+    <section data-dc-tpl="265" id="faq" data-screen-label="Вопросы" style="max-width: 900px; margin: 0px auto; padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 48px);">
+      <h2 data-dc-tpl="266" style="margin: 0px 0px 26px; font-family: var(--font-display); font-weight: 600; font-size: clamp(26px, 3.4vw, 40px); letter-spacing: -0.03em;">Вопросы, которые вы уже придумали</h2>
+      <div data-dc-tpl="267" style="display: flex; flex-direction: column; gap: 12px;">
+        <details data-dc-tpl="268" style="border-radius: 20px; border: 1px solid var(--border-soft); background: var(--surface-3); padding: 18px 22px;"><summary data-dc-tpl="269" style="cursor: pointer; font-size: 16.5px; font-weight: 600; font-family: var(--font-display); list-style: none;">Сколько стоит?</summary><p data-dc-tpl="270" style="margin: 12px 0px 0px; font-size: 15px; line-height: 1.55; color: rgba(255, 255, 255, 0.65);">Ничего. Приложение бесплатное, рекламы внутри нет.</p></details>
+        <details data-dc-tpl="271" style="border-radius: 20px; border: 1px solid var(--border-soft); background: var(--surface-3); padding: 18px 22px;"><summary data-dc-tpl="272" style="cursor: pointer; font-size: 16.5px; font-weight: 600; font-family: var(--font-display); list-style: none;">Меня не забанят за сторонний клиент?</summary><p data-dc-tpl="273" style="margin: 12px 0px 0px; font-size: 15px; line-height: 1.55; color: rgba(255, 255, 255, 0.65);">Сторонние клиенты телеграм разрешает — на этом держится половина его экосистемы. Баны прилетают за спам и массовые рассылки; FidRid не делает ни того, ни другого.</p></details>
+        <details data-dc-tpl="274" style="border-radius: 20px; border: 1px solid var(--border-soft); background: var(--surface-3); padding: 18px 22px;"><summary data-dc-tpl="275" style="cursor: pointer; font-size: 16.5px; font-weight: 600; font-family: var(--font-display); list-style: none;">А личные чаты вы видите?</summary><p data-dc-tpl="276" style="margin: 12px 0px 0px; font-size: 15px; line-height: 1.55; color: rgba(255, 255, 255, 0.65);">FidRid показывает только каналы, которые вы сами включили. Личка в приложение не попадает — в этом вся идея.</p></details>
+        <details data-dc-tpl="277" style="border-radius: 20px; border: 1px solid var(--border-soft); background: var(--surface-3); padding: 18px 22px;"><summary data-dc-tpl="278" style="cursor: pointer; font-size: 16.5px; font-weight: 600; font-family: var(--font-display); list-style: none;">Что будет с непрочитанными, если я замьючу канал?</summary><p data-dc-tpl="279" style="margin: 12px 0px 0px; font-size: 15px; line-height: 1.55; color: rgba(255, 255, 255, 0.65);">Ничего. Мьют убирает звук и бейдж, архив — из основного списка. Посты остаются в телеграме и появляются в ленте FidRid.</p></details>
+        <details data-dc-tpl="280" style="border-radius: 20px; border: 1px solid var(--border-soft); background: var(--surface-3); padding: 18px 22px;"><summary data-dc-tpl="281" style="cursor: pointer; font-size: 16.5px; font-weight: 600; font-family: var(--font-display); list-style: none;">Android будет?</summary><p data-dc-tpl="282" style="margin: 12px 0px 0px; font-size: 15px; line-height: 1.55; color: rgba(255, 255, 255, 0.65);">Пока только iPhone. Android в планах — о старте напишем в канале проекта.</p></details>
+      </div>
+    </section>
+
+    <section data-dc-tpl="283" data-screen-label="Финальный призыв" style="max-width: 1220px; margin: 0px auto; padding: clamp(30px, 5vw, 60px) clamp(16px, 4vw, 48px) clamp(60px, 8vw, 110px);">
+      <div data-dc-tpl="284" style="border-radius: 36px; border: 1px solid var(--border-soft); background: var(--surface-2); backdrop-filter: blur(24px); box-shadow: rgba(0, 0, 0, 0.45) 0px 40px 120px; padding: clamp(32px, 5vw, 64px); text-align: center; display: flex; flex-direction: column; align-items: center; gap: 22px;">
+        <h2 data-dc-tpl="285" style="margin: 0px; font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 4.4vw, 54px); letter-spacing: -0.035em; line-height: 1.06; text-wrap: balance; max-width: 18ch;">Верните телеграму его работу</h2>
+        <p data-dc-tpl="286" style="margin: 0px; max-width: 52ch; font-size: 17px; line-height: 1.5; color: rgba(255, 255, 255, 0.7);">Личные сообщения — в телеграме. Каналы — в ленте. Две минуты на настройку, и список чатов снова помещается на один экран.</p>
+        <div data-dc-tpl="287" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 28px;">
+          <div class="sc-host-x" data-dc-tpl="288" style="display: contents;"><a href="#download" style="font-family: var(--font-display); font-weight: 600; cursor: pointer; text-decoration: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; background: none; display: inline-flex; align-items: center; gap: 14px; color: rgb(255, 255, 255); font-size: 16px;"><span style="width: 56px; height: 56px; border-radius: 50%; background: var(--grad-cta); display: grid; place-items: center; color: rgb(2, 16, 24); font-size: 22px; box-shadow: rgba(0, 150, 255, 0.4) 0px 10px 40px;">↓</span><span>Скачать в App Store</span></a></div>
+          <div data-dc-tpl="289" style="display: flex; align-items: center; gap: 14px;">
+            <img data-dc-tpl="290" src="assets/qr-code.svg" alt="QR-код на страницу приложения в App Store" width="200" height="200" style="width: 200px; height: 200px; border-radius: 16px; background: rgb(255, 255, 255); padding: 10px; display: block;">
+            <span data-dc-tpl="291" style="font-size: 13.5px; line-height: 1.4; color: rgba(255, 255, 255, 0.5); max-width: 16ch; text-align: left;">Наведите камеру телефона</span>
+          </div>
+        </div>
+        <span data-dc-tpl="292" style="font-size: 13.5px; color: rgba(255, 255, 255, 0.4);">iPhone 14.0 и новее · бесплатно</span>
+      </div>
+    </section>
+
+    <footer data-dc-tpl="293" style="border-top: 1px solid var(--border-faint); padding: 26px clamp(16px, 4vw, 48px) 40px;">
+      <div data-dc-tpl="294" style="max-width: 1220px; margin: 0px auto; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; font-size: 13px; color: rgba(255, 255, 255, 0.4);">
+        <span data-dc-tpl="295" style="max-width: 46ch;">FidRid — неофициальный клиент Telegram, не связанный с Telegram LLC.</span>
+        <span data-dc-tpl="296" style="display: flex; flex-wrap: wrap; gap: 20px;"><a data-dc-tpl="297" href="Legal/Terms_of_Use_Ru.pdf" data-doc="terms" target="_blank" rel="noopener">Условия использования</a><a data-dc-tpl="298" href="Legal/Privacy_Policy_Ru.pdf" data-doc="privacy" target="_blank" rel="noopener">Политика конфиденциальности</a><a data-dc-tpl="299" href="Legal/Consent_to_Personal_Data_Processing_Ru.pdf" data-doc="processing" target="_blank" rel="noopener">Обработка персональных данных</a><a data-dc-tpl="300" href="#faq">Поддержка</a></span>
+      </div>
+      <div data-dc-tpl="301" style="max-width: 1220px; margin: 18px auto 0px; padding-top: 18px; border-top: 1px solid var(--border-faint); font-size: 13px; color: rgba(255, 255, 255, 0.35);">© 2026 Next15. All rights reserved.</div>
+    </footer>
+
+  </div></div></div></div>
+<script src="i18n.js"></script>
+</body>
+</html>

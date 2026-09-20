@@ -1,0 +1,11 @@
+/* ============================================================
+   tokens/effects.css — radii, blur, easing
+   ============================================================ */
+:root {
+  --radius-pill: 40px;   /* eyebrows, chips, nav CTA */
+  --radius-card: 28px;   /* glass cards / app frame */
+  --blur-glass:  blur(80px); /* @kind other */
+
+  /* signature keynote easing — long, soft settle */
+  --ease-soft: cubic-bezier(.16,.84,.34,1); /* @kind other */
+}

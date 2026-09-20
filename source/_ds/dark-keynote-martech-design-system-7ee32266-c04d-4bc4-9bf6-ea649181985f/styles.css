@@ -1,0 +1,17 @@
+/* ============================================================
+   Dark Keynote — global entry point
+   Consumers link THIS file. It only @imports; no rules inline here.
+   Order matters: fonts → tokens → base (classes resolve var()s above).
+   ============================================================ */
+
+/* webfonts (Golos Text variable, embedded — no external deps) */
+@import "golos-embed.css";
+
+/* design tokens (CSS custom properties) */
+@import "tokens/colors.css";
+@import "tokens/typography.css";
+@import "tokens/effects.css";
+@import "tokens/layout.css";
+
+/* reset + reusable utility & component classes */
+@import "base.css";

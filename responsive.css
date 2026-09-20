@@ -1,0 +1,34 @@
+/* Адаптив лендинга FidRid.
+
+   Разметка пришла из макета с инлайновыми стилями и без медиа-запросов,
+   поэтому правила ниже цепляются за содержимое атрибута style и перебивают
+   инлайн через !important. Ширины подобраны по точкам, где ломается вёрстка:
+   900px - двухколоночные секции перестают помещаться,
+   720px - навигация в шапке наезжает на кнопки.
+*/
+
+/* Двухколоночные секции (герой и "Как это работает") складываются в одну */
+@media (max-width: 900px) {
+  [style*="grid-template-columns: minmax(0px, 1.05fr)"],
+  [style*="grid-template-columns: minmax(0px, 1fr) minmax(0px, 0.8fr)"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+/* Шапка: убираем текстовые пункты меню, оставляем переключатель языка и кнопку */
+@media (max-width: 720px) {
+  header[data-el="Z"] > nav > a[href^="#"] {
+    display: none !important;
+  }
+  header[data-el="Z"] > nav {
+    gap: 12px !important;
+  }
+}
+
+/* Узкий экран: уменьшаем QR-коды, чтобы они не съедали высоту первого экрана */
+@media (max-width: 520px) {
+  img[src="assets/qr-code.svg"] {
+    width: 132px !important;
+    height: 132px !important;
+  }
+}

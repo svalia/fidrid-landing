@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FidRid — каналы в ленту</title>
+<link rel="stylesheet" href="_ds/dark-keynote-martech-design-system-7ee32266-c04d-4bc4-9bf6-ea649181985f/golos-embed.css">
+<link rel="stylesheet" href="_ds/dark-keynote-martech-design-system-7ee32266-c04d-4bc4-9bf6-ea649181985f/tokens/colors.css">
+<link rel="stylesheet" href="_ds/dark-keynote-martech-design-system-7ee32266-c04d-4bc4-9bf6-ea649181985f/tokens/typography.css">
+<link rel="stylesheet" href="_ds/dark-keynote-martech-design-system-7ee32266-c04d-4bc4-9bf6-ea649181985f/tokens/effects.css">
+<link rel="stylesheet" href="_ds/dark-keynote-martech-design-system-7ee32266-c04d-4bc4-9bf6-ea649181985f/tokens/layout.css">
+<link rel="stylesheet" href="_ds/dark-keynote-martech-design-system-7ee32266-c04d-4bc4-9bf6-ea649181985f/base.css">
+<link rel="stylesheet" href="_ds/dark-keynote-martech-design-system-7ee32266-c04d-4bc4-9bf6-ea649181985f/styles.css">
+<script src="_ds/dark-keynote-martech-design-system-7ee32266-c04d-4bc4-9bf6-ea649181985f/_ds_bundle.js"></script>
+<style>
+  body { margin: 0; background: #05101E; }
+  a { color: #47E4FF; text-decoration: none; }
+  a:hover { color: #FFFFFF; }
+  @keyframes fr-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+
+<div data-screen-label="Лендинг FidRid" ref="{{ rootRef }}" style="position: relative; min-height: 100%; background: #05101E; color: #fff; font-family: var(--font-text), 'Golos Text', system-ui, sans-serif; overflow-x: hidden;">
+
+  <div aria-hidden="true" style="position: fixed; inset: 0; pointer-events: none; z-index: 0; background: radial-gradient(620px 520px at 12% 4%, rgba(0,198,255,.28), transparent 65%), radial-gradient(680px 560px at 88% 82%, rgba(102,36,250,.26), transparent 65%); filter: blur(60px); opacity: .85;"></div>
+
+  <div style="position: relative; z-index: 1;">
+
+    <header data-el="Z" style="position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px clamp(16px, 4vw, 48px); background: rgba(5,16,30,.72); backdrop-filter: blur(22px); border-bottom: 1px solid var(--border-faint);">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="assets/fidrid-mark.svg" alt="FidRid" width="32" height="32" style="width: 32px; height: 32px; border-radius: 9px; display: block;">
+        <span style="font-family: var(--font-display); font-weight: 600; font-size: 18px; letter-spacing: -.02em;">FidRid</span>
+      </div>
+      <nav style="display: flex; align-items: center; gap: clamp(14px, 2vw, 28px); font-size: 14px;">
+        <a href="#how" style="color: rgba(255,255,255,.7);" style-hover="color: #ffffff;">Как работает</a>
+        <a href="#safety" style="color: rgba(255,255,255,.7);" style-hover="color: #ffffff;">Безопасность</a>
+        <a href="#faq" style="color: rgba(255,255,255,.7);" style-hover="color: #ffffff;">Вопросы</a>
+        <button type="button" data-nolang="1" onClick="{{ toggleLang }}" style="cursor: pointer; font-family: var(--font-display); font-weight: 600; font-size: 13px; letter-spacing: .06em; color: #fff; padding: 9px 14px; border-radius: var(--radius-pill); border: 1px solid var(--border-soft); background: var(--surface-2); backdrop-filter: blur(20px);" style-hover="border-color: rgba(71,228,255,.6);">{{ langBtn }}</button>
+        <x-import component-from-global-scope="DarkKeynoteMartechDesignSystem_7ee322.Button" variant="glass" href="#download" hint-size="auto,42px">Скачать</x-import>
+      </nav>
+    </header>
+
+    <section data-screen-label="Герой" style="max-width: 1220px; margin: 0 auto; padding: clamp(40px, 7vw, 92px) clamp(16px, 4vw, 48px) clamp(48px, 7vw, 96px); display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(28px, 5vw, 64px); align-items: center;">
+      <div style="min-width: 0; animation: fr-rise .9s cubic-bezier(.16,.84,.34,1) both;">
+        <x-import component-from-global-scope="DarkKeynoteMartechDesignSystem_7ee322.Badge" hint-size="auto,32px">Неофициальный клиент Telegram</x-import>
+        <h1 style="margin: 20px 0 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(38px, 6.2vw, 74px); line-height: 1.02; letter-spacing: -.035em; text-wrap: balance;">Каналы&nbsp;— в ленту.<br><span style="background: linear-gradient(46deg, #0476E1 0%, #00D9FF 40%, #47E4FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">Телеграм&nbsp;— в покой.</span></h1>
+        <p style="margin: 22px 0 0; max-width: 46ch; font-size: clamp(16px, 1.6vw, 19px); line-height: 1.55; color: rgba(255,255,255,.72); text-wrap: pretty;">У вас 300 каналов и одна мама, которая пишет в том же списке. FidRid забирает каналы себе — красивой лентой, как в соцсети. В телеграме остаются люди.</p>
+        <div id="download" style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 34px;">
+          <x-import component-from-global-scope="DarkKeynoteMartechDesignSystem_7ee322.Button" variant="round" href="#download" icon="↓" hint-size="auto,56px">Скачать в App Store</x-import>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="assets/qr-code.svg" alt="QR-код на страницу приложения в App Store" width="160" height="160" style="width: 160px; height: 160px; border-radius: 14px; background: #fff; padding: 8px; display: block;">
+            <span style="font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.5); max-width: 15ch;">Наведите камеру телефона</span>
+          </div>
+          <span style="font-size: 14px; color: rgba(255,255,255,.45);">iPhone · бесплатно · без рекламы</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 26px; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--border-faint);">
+          <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-family: var(--font-display); font-weight: 600; font-size: 26px; background: var(--grad-stat); -webkit-background-clip: text; background-clip: text; color: transparent;">2 минуты</span><span style="font-size: 13px; color: rgba(255,255,255,.45);">на настройку с нуля</span></div>
+          <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-family: var(--font-display); font-weight: 600; font-size: 26px; background: var(--grad-stat); -webkit-background-clip: text; background-clip: text; color: transparent;">Вход по коду</span><span style="font-size: 13px; color: rgba(255,255,255,.45);">официальное API, без ботов и паролей</span></div>
+          <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-family: var(--font-display); font-weight: 600; font-size: 26px; background: var(--grad-stat); -webkit-background-clip: text; background-clip: text; color: transparent;">1 список</span><span style="font-size: 13px; color: rgba(255,255,255,.45);">в личке — только люди</span></div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; min-width: 0; animation: fr-rise 1s cubic-bezier(.16,.84,.34,1) .12s both;">
+        <div style="width: 320px; max-width: 100%; flex: 0 0 auto; padding: 11px; border-radius: 52px; background: linear-gradient(160deg, #26364A 0%, #0B1522 60%); border: 1px solid rgba(255,255,255,.14); box-shadow: 0 50px 130px rgba(0,0,0,.6);">
+          <div style="border-radius: 42px; overflow: hidden; background: #fff; height: 640px; display: flex; flex-direction: column; color: #000;">
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 24px 6px; font-size: 13px; font-weight: 600;"><span>9:41</span><span style="letter-spacing: 2px; color: #000;">▮▮▮ ᯤ ▰</span></div>
+            <div style="display: flex; align-items: center; justify-content: center; position: relative; padding: 8px 16px 12px; font-size: 16px; font-weight: 600;">Лента не прочитанных<span style="position: absolute; right: 18px; color: #007AFF; font-size: 17px;">↻</span></div>
+            <div style="display: flex; gap: 14px; padding: 10px 14px; overflow: hidden; border-top: 1px solid #ECECEF;">
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 0 0 auto; width: 62px;"><span style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #7BD7FF, #2A7BEA); border: 2.5px solid #A97BF0; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 20px;">П</span><span style="font-size: 10px; color: #3C3C43; max-width: 62px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Пиксель и…</span></div>
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 0 0 auto; width: 62px;"><span style="width: 56px; height: 56px; border-radius: 50%; background: #16181C; border: 2.5px solid #A97BF0; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 20px;">С</span><span style="font-size: 10px; color: #3C3C43; max-width: 62px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Сухая выж…</span></div>
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 0 0 auto; width: 62px;"><span style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #3AE3B6, #16A97F); border: 2.5px solid #A97BF0; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 20px;">З</span><span style="font-size: 10px; color: #3C3C43; max-width: 62px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Зона турб…</span></div>
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 0 0 auto; width: 62px;"><span style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #FFB36B, #E86A3A); border: 2.5px solid #A97BF0; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 20px;">К</span><span style="font-size: 10px; color: #3C3C43; max-width: 62px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Кофе в 7:00</span></div>
+            </div>
+            <div style="display: flex; gap: 8px; padding: 4px 14px 12px; overflow: hidden; border-bottom: 1px solid #ECECEF;">
+              <span style="flex: 0 0 auto; padding: 8px 16px; border-radius: 20px; background: #007AFF; color: #fff; font-size: 14px; font-weight: 600;">Все 1 241</span>
+              <span style="flex: 0 0 auto; padding: 8px 16px; border-radius: 20px; background: #EFEFF3; color: #1C1C1E; font-size: 14px;">Работа</span>
+              <span style="flex: 0 0 auto; padding: 8px 16px; border-radius: 20px; background: #EFEFF3; color: #1C1C1E; font-size: 14px;">Новости</span>
+            </div>
+            <div style="flex: 1; overflow: hidden; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px;">
+              <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #7BD7FF, #2A7BEA); display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 13px;">П</span><span style="font-weight: 600; font-size: 15px;">Пиксель и точка</span><span style="margin-left: auto; color: #8A8A8E;">•••</span></div>
+              <div style="border-radius: 12px; overflow: hidden; background: linear-gradient(135deg, #12213A 0%, #35507F 55%, #6D4FB0 100%); height: 150px; display: flex; align-items: flex-end; padding: 14px;"><span style="color: #fff; font-weight: 600; font-size: 15px; line-height: 1.25;">Что не так с сеткой<br>в мобильных лентах</span></div>
+              <p style="margin: 0; font-size: 14.5px; line-height: 1.45; color: #1C1C1E;"><b>Разбор на пальцах.</b> Почему 4 колонки на телефоне — это боль, а 2 — нет. С примерами и линейкой.</p>
+              <div style="display: flex; align-items: center; gap: 16px; font-size: 13px; color: #8A8A8E;"><span>4 часа назад</span><span style="margin-left: auto; display: flex; gap: 14px; font-size: 15px;"><span>↗</span><span>⤴</span><span>♡</span></span></div>
+            </div>
+            <div style="display: flex; padding: 8px 0 18px; border-top: 1px solid #ECECEF; background: #FBFBFD;">
+              <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; white-space: nowrap; gap: 3px; color: #007AFF; font-size: 10px;"><span style="font-size: 17px;">▤</span>Лента</div>
+              <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; white-space: nowrap; gap: 3px; color: #8A8A8E; font-size: 10px;"><span style="font-size: 17px;">@</span>Каналы</div>
+              <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; white-space: nowrap; gap: 3px; color: #8A8A8E; font-size: 10px;"><span style="font-size: 17px;">⚙</span>Настройки</div>
+              <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; white-space: nowrap; gap: 3px; color: #8A8A8E; font-size: 10px;"><span style="font-size: 17px;">◍</span>Профиль</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="До и после" style="max-width: 1220px; margin: 0 auto; padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 48px);">
+      <h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 4vw, 48px); letter-spacing: -.03em; line-height: 1.08; text-wrap: balance;">Один список не может быть и мессенджером, и медиа</h2>
+      <p style="margin: 14px 0 0; max-width: 58ch; font-size: 17px; line-height: 1.5; color: rgba(255,255,255,.7);">Каналы кричат громче людей — просто потому, что их больше. Разводим их по разным приложениям.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 34px;">
+        <div style="border-radius: 28px; border: 1px solid rgba(255,90,90,.28); background: rgba(255,90,90,.05); padding: 26px;">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #FF8A8A;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #FF5A5A;"></span>До</div>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 18px;">
+            <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,.04);"><span style="width: 34px; height: 34px; border-radius: 50%; background: #3B4A60; display: grid; place-items: center; font-size: 13px; font-weight: 600;">С</span><span style="flex: 1; min-width: 0;"><span style="display: block; font-size: 14px; font-weight: 600;">Сухая выжимка</span><span style="display: block; font-size: 12.5px; color: rgba(255,255,255,.45); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Дайджест за среду: 14 пунктов</span></span><span style="padding: 2px 8px; border-radius: 10px; background: #FF5A5A; font-size: 11px; font-weight: 700;">214</span></div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,.04);"><span style="width: 34px; height: 34px; border-radius: 50%; background: #3B4A60; display: grid; place-items: center; font-size: 13px; font-weight: 600;">З</span><span style="flex: 1; min-width: 0;"><span style="display: block; font-size: 14px; font-weight: 600;">Зона турбулентности</span><span style="display: block; font-size: 12.5px; color: rgba(255,255,255,.45); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Срочно: ещё одна срочная новость</span></span><span style="padding: 2px 8px; border-radius: 10px; background: #FF5A5A; font-size: 11px; font-weight: 700;">98</span></div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.14);"><span style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, #F0A6C0, #C0679A); display: grid; place-items: center; font-size: 13px; font-weight: 600;">М</span><span style="flex: 1; min-width: 0;"><span style="display: block; font-size: 14px; font-weight: 600;">Мама</span><span style="display: block; font-size: 12.5px; color: rgba(255,255,255,.55); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Ты поел? Позвони, пожалуйста</span></span><span style="padding: 2px 8px; border-radius: 10px; background: rgba(255,255,255,.2); font-size: 11px; font-weight: 700;">2</span></div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,.04);"><span style="width: 34px; height: 34px; border-radius: 50%; background: #3B4A60; display: grid; place-items: center; font-size: 13px; font-weight: 600;">Н</span><span style="flex: 1; min-width: 0;"><span style="display: block; font-size: 14px; font-weight: 600;">Ночная смена</span><span style="display: block; font-size: 12.5px; color: rgba(255,255,255,.45); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Пост, который вы точно пролистаете</span></span><span style="padding: 2px 8px; border-radius: 10px; background: #FF5A5A; font-size: 11px; font-weight: 700;">431</span></div>
+          </div>
+          <p style="margin: 18px 0 0; font-size: 14px; line-height: 1.45; color: rgba(255,255,255,.55);">Мама лежит между двумя дайджестами. Найти её — квест.</p>
+        </div>
+        <div style="border-radius: 28px; border: 1px solid rgba(43,253,204,.3); background: rgba(43,253,204,.05); padding: 26px;">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #2BFDCC;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #2BFDCC;"></span>После</div>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 18px;">
+            <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,.07);"><span style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, #F0A6C0, #C0679A); display: grid; place-items: center; font-size: 13px; font-weight: 600;">М</span><span style="flex: 1; min-width: 0;"><span style="display: block; font-size: 14px; font-weight: 600;">Мама</span><span style="display: block; font-size: 12.5px; color: rgba(255,255,255,.5); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Ты поел? Позвони, пожалуйста</span></span><span style="padding: 2px 8px; border-radius: 10px; background: #2BFDCC; color: #05101E; font-size: 11px; font-weight: 700;">2</span></div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,.07);"><span style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, #8FB7FF, #4A6FD0); display: grid; place-items: center; font-size: 13px; font-weight: 600;">К</span><span style="flex: 1; min-width: 0;"><span style="display: block; font-size: 14px; font-weight: 600;">Костя Л.</span><span style="display: block; font-size: 12.5px; color: rgba(255,255,255,.5); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Скинул смету, глянь вечером</span></span></div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,.07);"><span style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, #B9E3A8, #6FA65C); display: grid; place-items: center; font-size: 13px; font-weight: 600;">Р</span><span style="flex: 1; min-width: 0;"><span style="display: block; font-size: 14px; font-weight: 600;">Ремонт, 4 участника</span><span style="display: block; font-size: 12.5px; color: rgba(255,255,255,.5); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Плитку привезут в четверг</span></span></div>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 12px; border-radius: 14px; border: 1px dashed rgba(43,253,204,.35); font-size: 13.5px; color: rgba(255,255,255,.62);">87 каналов уехали в FidRid</div>
+          </div>
+          <p style="margin: 18px 0 0; font-size: 14px; line-height: 1.45; color: rgba(255,255,255,.55);">Каналы никуда не делись — они замьючены и в архиве. И читаются отдельно.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" data-screen-label="Как это работает" style="max-width: 1220px; margin: 0 auto; padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 48px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .8fr); gap: clamp(28px, 5vw, 64px); align-items: center;">
+      <div style="min-width: 0;">
+        <x-import component-from-global-scope="DarkKeynoteMartechDesignSystem_7ee322.Badge" hint-size="auto,32px">Три шага</x-import>
+        <h2 style="margin: 18px 0 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 4vw, 48px); letter-spacing: -.03em; line-height: 1.08; text-wrap: balance;">Настройка короче, чем один дайджест</h2>
+        <div style="display: flex; flex-direction: column; gap: 18px; margin-top: 30px;">
+          <div style="display: flex; gap: 18px; align-items: flex-start;">
+            <span style="flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-soft); background: var(--surface-2); display: grid; place-items: center; font-family: var(--font-display); font-weight: 600; font-size: 16px;">1</span>
+            <div><div style="font-family: var(--font-display); font-weight: 600; font-size: 19px; letter-spacing: -.01em;">Входите под своим аккаунтом</div><p style="margin: 6px 0 0; font-size: 15.5px; line-height: 1.5; color: rgba(255,255,255,.65); max-width: 44ch;">Обычный вход по коду через официальное API. Никаких ботов, пересылок и «дай логин от аккаунта».</p></div>
+          </div>
+          <div style="display: flex; gap: 18px; align-items: flex-start;">
+            <span style="flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-soft); background: var(--surface-2); display: grid; place-items: center; font-family: var(--font-display); font-weight: 600; font-size: 16px;">2</span>
+            <div><div style="font-family: var(--font-display); font-weight: 600; font-size: 19px; letter-spacing: -.01em;">Отмечаете, что читать</div><p style="margin: 6px 0 0; font-size: 15.5px; line-height: 1.5; color: rgba(255,255,255,.65); max-width: 44ch;">Список всех ваших каналов с тумблерами и поиском. Нужные — в ленту, остальные оставьте как есть.</p></div>
+          </div>
+          <div style="display: flex; gap: 18px; align-items: flex-start;">
+            <span style="flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-soft); background: var(--surface-2); display: grid; place-items: center; font-family: var(--font-display); font-weight: 600; font-size: 16px;">3</span>
+            <div><div style="font-family: var(--font-display); font-weight: 600; font-size: 19px; letter-spacing: -.01em;">Жмёте «замьютить и в архив»</div><p style="margin: 6px 0 0; font-size: 15.5px; line-height: 1.5; color: rgba(255,255,255,.65); max-width: 44ch;">Одним действием сразу для всех выбранных. Телеграм пустеет, лента наполняется. Откатить можно тем же тумблером.</p></div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center; min-width: 0;">
+        <div style="width: 300px; max-width: 100%; flex: 0 0 auto; padding: 10px; border-radius: 48px; background: linear-gradient(160deg, #26364A 0%, #0B1522 60%); border: 1px solid rgba(255,255,255,.14); box-shadow: 0 50px 130px rgba(0,0,0,.6);">
+          <div style="border-radius: 39px; overflow: hidden; background: #fff; height: 600px; display: flex; flex-direction: column; color: #000;">
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 22px 4px; font-size: 12.5px; font-weight: 600;"><span>9:41</span><span style="letter-spacing: 2px;">▮▮▮ ᯤ ▰</span></div>
+            <div style="text-align: center; padding: 6px 16px 12px; font-size: 16px; font-weight: 600;">Каналы</div>
+            <div style="padding: 0 14px 10px;"><div style="display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 11px; background: #EFEFF3; color: #8A8A8E; font-size: 14px;">⌕ Поиск каналов</div></div>
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 16px 10px; font-size: 14px; color: #007AFF; font-weight: 500;"><span>✓ Массовые действия</span><span>Показывать все</span></div>
+            <div style="flex: 1; overflow: hidden; display: flex; flex-direction: column; gap: 9px; padding: 0 12px;">
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 14px; background: #F2F2F7;"><span style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #7BD7FF, #2A7BEA); display: grid; place-items: center; color: #fff; font-weight: 700;">П</span><span style="flex: 1; font-size: 15px; font-weight: 500;">Пиксель и точка</span><span style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;"><span style="width: 44px; height: 26px; border-radius: 13px; background: #34C759; position: relative;"><span style="position: absolute; top: 2px; right: 2px; width: 22px; height: 22px; border-radius: 50%; background: #fff;"></span></span><span style="font-size: 11px; color: #8A8A8E;">⌀ #1</span></span></div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 14px; background: #F2F2F7;"><span style="width: 40px; height: 40px; border-radius: 50%; background: #16181C; display: grid; place-items: center; color: #fff; font-weight: 700;">С</span><span style="flex: 1; font-size: 15px; font-weight: 500;">Сухая выжимка</span><span style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;"><span style="width: 44px; height: 26px; border-radius: 13px; background: #34C759; position: relative;"><span style="position: absolute; top: 2px; right: 2px; width: 22px; height: 22px; border-radius: 50%; background: #fff;"></span></span><span style="font-size: 11px; color: #8A8A8E;">▤ ⌀ #2</span></span></div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 14px; background: #F2F2F7;"><span style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #3AE3B6, #16A97F); display: grid; place-items: center; color: #fff; font-weight: 700;">З</span><span style="flex: 1; font-size: 15px; font-weight: 500;">Зона турбулентности</span><span style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;"><span style="width: 44px; height: 26px; border-radius: 13px; background: #E4E4E9; position: relative;"><span style="position: absolute; top: 2px; left: 2px; width: 22px; height: 22px; border-radius: 50%; background: #fff;"></span></span><span style="font-size: 11px; color: #8A8A8E;">#3</span></span></div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 14px; background: #F2F2F7;"><span style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #FFB36B, #E86A3A); display: grid; place-items: center; color: #fff; font-weight: 700;">К</span><span style="flex: 1; font-size: 15px; font-weight: 500;">Кофе в 7:00</span><span style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;"><span style="width: 44px; height: 26px; border-radius: 13px; background: #34C759; position: relative;"><span style="position: absolute; top: 2px; right: 2px; width: 22px; height: 22px; border-radius: 50%; background: #fff;"></span></span><span style="font-size: 11px; color: #8A8A8E;">▤ ⌀ #4</span></span></div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 14px; background: #F2F2F7;"><span style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #C9A6F5, #7A4FD0); display: grid; place-items: center; color: #fff; font-weight: 700;">Т</span><span style="flex: 1; font-size: 15px; font-weight: 500;">Тихий бэклог</span><span style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;"><span style="width: 44px; height: 26px; border-radius: 13px; background: #E4E4E9; position: relative;"><span style="position: absolute; top: 2px; left: 2px; width: 22px; height: 22px; border-radius: 50%; background: #fff;"></span></span><span style="font-size: 11px; color: #8A8A8E;">#5</span></span></div>
+            </div>
+            <div style="display: flex; padding: 8px 0 16px; border-top: 1px solid #ECECEF; background: #FBFBFD;">
+              <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; white-space: nowrap; gap: 3px; color: #8A8A8E; font-size: 10px;"><span style="font-size: 17px;">▤</span>Лента</div>
+              <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; white-space: nowrap; gap: 3px; color: #007AFF; font-size: 10px;"><span style="font-size: 17px;">@</span>Каналы</div>
+              <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; white-space: nowrap; gap: 3px; color: #8A8A8E; font-size: 10px;"><span style="font-size: 17px;">⚙</span>Настройки</div>
+              <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; white-space: nowrap; gap: 3px; color: #8A8A8E; font-size: 10px;"><span style="font-size: 17px;">◍</span>Профиль</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Возможности" style="max-width: 1220px; margin: 0 auto; padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 48px);">
+      <h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 4vw, 48px); letter-spacing: -.03em; line-height: 1.08; text-wrap: balance;">Лента, которая ведёт себя как лента</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 34px;">
+        <div style="border-radius: 28px; border: 1px solid var(--border-soft); background: var(--surface-2); backdrop-filter: blur(20px); padding: 28px;">
+          <div style="font-family: var(--font-display); font-weight: 600; font-size: 20px; letter-spacing: -.02em;">Сторис из каналов</div>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,.65);">Кто написал за последние часы — кружками сверху. Пролистать пять каналов быстрее, чем открыть один чат.</p>
+        </div>
+        <div style="border-radius: 28px; border: 1px solid var(--border-soft); background: var(--surface-2); backdrop-filter: blur(20px); padding: 28px;">
+          <div style="font-family: var(--font-display); font-weight: 600; font-size: 20px; letter-spacing: -.02em;">Фильтры и папки</div>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,.65);">«Работа» отдельно, «Новости» отдельно. Утром — рабочее, вечером — всё остальное.</p>
+        </div>
+        <div style="border-radius: 28px; border: 1px solid var(--border-soft); background: var(--surface-2); backdrop-filter: blur(20px); padding: 28px;">
+          <div style="font-family: var(--font-display); font-weight: 600; font-size: 20px; letter-spacing: -.02em;">Свои статусы прочтения</div>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,.65);">Пост непрочитан, пока вы его не увидели здесь. Счётчик в телеграме при этом молчит.</p>
+        </div>
+        <div style="border-radius: 28px; border: 1px solid var(--border-soft); background: var(--surface-2); backdrop-filter: blur(20px); padding: 28px;">
+          <div style="font-family: var(--font-display); font-weight: 600; font-size: 20px; letter-spacing: -.02em;">Массовые действия</div>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,.65);">Замьютить и заархивировать 80 каналов разом. Вручную это вечер жизни.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="safety" data-screen-label="Безопасность" style="max-width: 1220px; margin: 0 auto; padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 48px);">
+      <x-import component-from-global-scope="DarkKeynoteMartechDesignSystem_7ee322.Badge" hint-size="auto,32px">Честно про доступ</x-import>
+      <h2 style="margin: 18px 0 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 4vw, 48px); letter-spacing: -.03em; line-height: 1.08; text-wrap: balance;">Вы пускаете приложение в свой аккаунт. Вот что оно там делает</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-top: 32px;">
+        <div style="border-radius: 24px; border: 1px solid var(--border-soft); background: var(--surface-3); padding: 24px;"><div style="font-size: 16px; font-weight: 600; font-family: var(--font-display);">Официальное API</div><p style="margin: 8px 0 0; font-size: 14.5px; line-height: 1.5; color: rgba(255,255,255,.62);">Тот же протокол, на котором работают все сторонние клиенты телеграма. Пароль вы вводите не нам, а в окно входа телеграма.</p></div>
+        <div style="border-radius: 24px; border: 1px solid var(--border-soft); background: var(--surface-3); padding: 24px;"><div style="font-size: 16px; font-weight: 600; font-family: var(--font-display);">Аккаунт не под угрозой</div><p style="margin: 8px 0 0; font-size: 14.5px; line-height: 1.5; color: rgba(255,255,255,.62);">Мы не рассылаем, не вступаем в каналы и не пишем от вашего имени. Всё, что делает FidRid, — читает и выключает уведомления там, где вы попросили.</p></div>
+        <div style="grid-column: 1 / -1; order: -1; border-radius: 28px; border: 1px solid rgba(43,253,204,.35); background: rgba(43,253,204,.06); padding: clamp(24px, 3vw, 34px); display: flex; flex-wrap: wrap; align-items: center; gap: clamp(18px, 3vw, 36px);"><div style="flex: 1 1 260px; min-width: 0;"><div style="display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #2BFDCC;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #2BFDCC;"></span>Главное</div><div style="margin-top: 12px; font-family: var(--font-display); font-weight: 600; font-size: clamp(22px, 2.6vw, 32px); letter-spacing: -.025em; line-height: 1.12;">Ваши сообщения не покидают телефон</div></div><p style="flex: 1 1 280px; margin: 0; font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.75); max-width: 48ch;">Лента собирается <b style="color: #fff; font-weight: 600;">на устройстве</b>. Мы не храним ваши сообщения на сервере, не пересылаем их третьим лицам и не продаём статистику чтения — её просто негде взять.</p></div>
+        <div style="border-radius: 24px; border: 1px solid var(--border-soft); background: var(--surface-3); padding: 24px;"><div style="font-size: 16px; font-weight: 600; font-family: var(--font-display);">Ничего не теряется</div><p style="margin: 8px 0 0; font-size: 14.5px; line-height: 1.5; color: rgba(255,255,255,.62);">Мьют и архив — штатные функции телеграма. Каналы остаются на месте, посты никуда не деваются, вернуть всё можно одним тумблером.</p></div>
+      </div>
+    </section>
+
+    <section id="faq" data-screen-label="Вопросы" style="max-width: 900px; margin: 0 auto; padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 48px);">
+      <h2 style="margin: 0 0 26px; font-family: var(--font-display); font-weight: 600; font-size: clamp(26px, 3.4vw, 40px); letter-spacing: -.03em;">Вопросы, которые вы уже придумали</h2>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <details style="border-radius: 20px; border: 1px solid var(--border-soft); background: var(--surface-3); padding: 18px 22px;"><summary style="cursor: pointer; font-size: 16.5px; font-weight: 600; font-family: var(--font-display); list-style: none;">Сколько стоит?</summary><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.65);">Ничего. Приложение бесплатное, рекламы внутри нет.</p></details>
+        <details style="border-radius: 20px; border: 1px solid var(--border-soft); background: var(--surface-3); padding: 18px 22px;"><summary style="cursor: pointer; font-size: 16.5px; font-weight: 600; font-family: var(--font-display); list-style: none;">Меня не забанят за сторонний клиент?</summary><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.65);">Сторонние клиенты телеграм разрешает — на этом держится половина его экосистемы. Баны прилетают за спам и массовые рассылки; FidRid не делает ни того, ни другого.</p></details>
+        <details style="border-radius: 20px; border: 1px solid var(--border-soft); background: var(--surface-3); padding: 18px 22px;"><summary style="cursor: pointer; font-size: 16.5px; font-weight: 600; font-family: var(--font-display); list-style: none;">А личные чаты вы видите?</summary><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.65);">FidRid показывает только каналы, которые вы сами включили. Личка в приложение не попадает — в этом вся идея.</p></details>
+        <details style="border-radius: 20px; border: 1px solid var(--border-soft); background: var(--surface-3); padding: 18px 22px;"><summary style="cursor: pointer; font-size: 16.5px; font-weight: 600; font-family: var(--font-display); list-style: none;">Что будет с непрочитанными, если я замьючу канал?</summary><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.65);">Ничего. Мьют убирает звук и бейдж, архив — из основного списка. Посты остаются в телеграме и появляются в ленте FidRid.</p></details>
+        <details style="border-radius: 20px; border: 1px solid var(--border-soft); background: var(--surface-3); padding: 18px 22px;"><summary style="cursor: pointer; font-size: 16.5px; font-weight: 600; font-family: var(--font-display); list-style: none;">Android будет?</summary><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.65);">Пока только iPhone. Android в планах — о старте напишем в канале проекта.</p></details>
+      </div>
+    </section>
+
+    <section data-screen-label="Финальный призыв" style="max-width: 1220px; margin: 0 auto; padding: clamp(30px, 5vw, 60px) clamp(16px, 4vw, 48px) clamp(60px, 8vw, 110px);">
+      <div style="border-radius: 36px; border: 1px solid var(--border-soft); background: var(--surface-2); backdrop-filter: blur(24px); box-shadow: 0 40px 120px rgba(0,0,0,.45); padding: clamp(32px, 5vw, 64px); text-align: center; display: flex; flex-direction: column; align-items: center; gap: 22px;">
+        <h2 style="margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 4.4vw, 54px); letter-spacing: -.035em; line-height: 1.06; text-wrap: balance; max-width: 18ch;">Верните телеграму его работу</h2>
+        <p style="margin: 0; max-width: 52ch; font-size: 17px; line-height: 1.5; color: rgba(255,255,255,.7);">Личные сообщения — в телеграме. Каналы — в ленте. Две минуты на настройку, и список чатов снова помещается на один экран.</p>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 28px;">
+          <x-import component-from-global-scope="DarkKeynoteMartechDesignSystem_7ee322.Button" variant="round" href="#download" icon="↓" hint-size="auto,56px">Скачать в App Store</x-import>
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <img src="assets/qr-code.svg" alt="QR-код на страницу приложения в App Store" width="200" height="200" style="width: 200px; height: 200px; border-radius: 16px; background: #fff; padding: 10px; display: block;">
+            <span style="font-size: 13.5px; line-height: 1.4; color: rgba(255,255,255,.5); max-width: 16ch; text-align: left;">Наведите камеру телефона</span>
+          </div>
+        </div>
+        <span style="font-size: 13.5px; color: rgba(255,255,255,.4);">iPhone 14.0 и новее · бесплатно</span>
+      </div>
+    </section>
+
+    <footer style="border-top: 1px solid var(--border-faint); padding: 26px clamp(16px, 4vw, 48px) 40px;">
+      <div style="max-width: 1220px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; font-size: 13px; color: rgba(255,255,255,.4);">
+        <span style="max-width: 46ch;">FidRid — неофициальный клиент Telegram, не связанный с Telegram LLC.</span>
+        <span style="display: flex; flex-wrap: wrap; gap: 20px;"><a href="#terms">Условия использования</a><a href="#privacy">Политика конфиденциальности</a><a href="#pdn">Обработка персональных данных</a><a href="#faq">Поддержка</a></span>
+      </div>
+      <div style="max-width: 1220px; margin: 18px auto 0; padding-top: 18px; border-top: 1px solid var(--border-faint); font-size: 13px; color: rgba(255,255,255,.35);">© 2026 Next15. All rights reserved.</div>
+    </footer>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const DICT = {
+  "Как работает": "How it works",
+  "Безопасность": "Security",
+  "Вопросы": "FAQ",
+  "Скачать": "Get the app",
+  "Неофициальный клиент Telegram": "Unofficial Telegram client",
+  "Каналы\u00a0— в ленту.": "Channels\u00a0— into a feed.",
+  "Телеграм\u00a0— в покой.": "Telegram\u00a0— into peace.",
+  "У вас 300 каналов и одна мама, которая пишет в том же списке. FidRid забирает каналы себе — красивой лентой, как в соцсети. В телеграме остаются люди.": "You follow 300 channels and one mum — and they all live in the same list. FidRid takes the channels into a proper feed, the way a social app does. Telegram keeps the people.",
+  "Скачать в App Store": "Download on the App Store",
+  "iPhone · бесплатно · без рекламы": "iPhone · free · no ads",
+  "Наведите камеру телефона": "Point your phone camera",
+  "2 минуты": "2 minutes",
+  "на настройку с нуля": "to set up from scratch",
+  "Вход по коду": "Code sign-in",
+  "официальное API, без ботов и паролей": "official API, no bots, no passwords",
+  "1 список": "One list",
+  "в личке — только люди": "in Telegram — people only",
+  "Лента не прочитанных": "Unread feed",
+  "Пиксель и…": "Pixel & D…",
+  "Сухая выж…": "Dry Diges…",
+  "Зона турб…": "Turbulenc…",
+  "Кофе в 7:00": "Coffee at 7",
+  "Все 1 241": "All 1,241",
+  "Работа": "Work",
+  "Новости": "News",
+  "Пиксель и точка": "Pixel & Dot",
+  "Что не так с сеткой": "What's wrong with grids",
+  "в мобильных лентах": "in mobile feeds",
+  "Разбор на пальцах.": "A plain-language breakdown.",
+  "Почему 4 колонки на телефоне — это боль, а 2 — нет. С примерами и линейкой.": "Why 4 columns on a phone hurt and 2 don't. With examples and a ruler.",
+  "4 часа назад": "4 hours ago",
+  "Лента": "Feed",
+  "Каналы": "Channels",
+  "Настройки": "Settings",
+  "Профиль": "Profile",
+  "Один список не может быть и мессенджером, и медиа": "One list can't be a messenger and a media outlet at once",
+  "Каналы кричат громче людей — просто потому, что их больше. Разводим их по разным приложениям.": "Channels shout louder than people — simply because there are more of them. So we move them to a different app.",
+  "До": "Before",
+  "После": "After",
+  "Сухая выжимка": "Dry Digest",
+  "Дайджест за среду: 14 пунктов": "Wednesday digest: 14 items",
+  "Зона турбулентности": "Turbulence Zone",
+  "Срочно: ещё одна срочная новость": "Breaking: another breaking story",
+  "Мама": "Mum",
+  "Ты поел? Позвони, пожалуйста": "Have you eaten? Please call",
+  "Ночная смена": "Night Shift",
+  "Пост, который вы точно пролистаете": "A post you'll definitely scroll past",
+  "Мама лежит между двумя дайджестами. Найти её — квест.": "Mum is buried between two digests. Finding her is a quest.",
+  "Костя Л.": "Chris L.",
+  "Скинул смету, глянь вечером": "Sent the estimate, check tonight",
+  "Ремонт, 4 участника": "Renovation, 4 members",
+  "Плитку привезут в четверг": "Tiles arrive on Thursday",
+  "87 каналов уехали в FidRid": "87 channels moved to FidRid",
+  "Каналы никуда не делись — они замьючены и в архиве. И читаются отдельно.": "The channels didn't go anywhere — they're muted and archived. You just read them elsewhere.",
+  "Три шага": "Three steps",
+  "Настройка короче, чем один дайджест": "Setup is shorter than one digest",
+  "Входите под своим аккаунтом": "Sign in with your account",
+  "Обычный вход по коду через официальное API. Никаких ботов, пересылок и «дай логин от аккаунта».": "A normal code sign-in through the official API. No bots, no forwarding, no «give us your login».",
+  "Отмечаете, что читать": "Pick what you want to read",
+  "Список всех ваших каналов с тумблерами и поиском. Нужные — в ленту, остальные оставьте как есть.": "All your channels with toggles and search. The ones you want go to the feed; leave the rest as they are.",
+  "Жмёте «замьютить и в архив»": "Tap «mute and archive»",
+  "Одним действием сразу для всех выбранных. Телеграм пустеет, лента наполняется. Откатить можно тем же тумблером.": "One action for everything you selected. Telegram empties out, the feed fills up. The same toggle undoes it.",
+  "⌕ Поиск каналов": "⌕ Search channels",
+  "✓ Массовые действия": "✓ Bulk actions",
+  "Показывать все": "Show all",
+  "Тихий бэклог": "Quiet Backlog",
+  "Лента, которая ведёт себя как лента": "A feed that actually behaves like a feed",
+  "Сторис из каналов": "Stories from channels",
+  "Кто написал за последние часы — кружками сверху. Пролистать пять каналов быстрее, чем открыть один чат.": "Who posted in the last few hours, as circles on top. Flicking through five channels is faster than opening one chat.",
+  "Фильтры и папки": "Filters and folders",
+  "«Работа» отдельно, «Новости» отдельно. Утром — рабочее, вечером — всё остальное.": "«Work» apart, «News» apart. Work in the morning, everything else at night.",
+  "Свои статусы прочтения": "Your own read states",
+  "Пост непрочитан, пока вы его не увидели здесь. Счётчик в телеграме при этом молчит.": "A post stays unread until you've seen it here. The Telegram badge stays quiet.",
+  "Массовые действия": "Bulk actions",
+  "Замьютить и заархивировать 80 каналов разом. Вручную это вечер жизни.": "Mute and archive 80 channels in one go. By hand that's an evening of your life.",
+  "Честно про доступ": "Straight talk about access",
+  "Вы пускаете приложение в свой аккаунт. Вот что оно там делает": "You're letting an app into your account. Here's what it does there",
+  "Официальное API": "Official API",
+  "Тот же протокол, на котором работают все сторонние клиенты телеграма. Пароль вы вводите не нам, а в окно входа телеграма.": "The same protocol every third-party Telegram client runs on. You type the code into Telegram's own login, not into us.",
+  "Аккаунт не под угрозой": "Your account is safe",
+  "Мы не рассылаем, не вступаем в каналы и не пишем от вашего имени. Всё, что делает FidRid, — читает и выключает уведомления там, где вы попросили.": "We don't send anything, don't join channels and never post on your behalf. All FidRid does is read, and mute where you asked it to.",
+  "Главное": "Key point",
+  "Ваши сообщения не покидают телефон": "Your messages never leave your phone",
+  "Лента собирается": "The feed is assembled",
+  "на устройстве": "on your device",
+  ". Мы не храним ваши сообщения на сервере, не пересылаем их третьим лицам и не продаём статистику чтения — её просто негде взять.": ". We don't keep your messages on a server, don't pass them to third parties and don't sell reading stats — there's nowhere to take them from.",
+  "Ничего не теряется": "Nothing gets lost",
+  "Мьют и архив — штатные функции телеграма. Каналы остаются на месте, посты никуда не деваются, вернуть всё можно одним тумблером.": "Mute and archive are Telegram's own features. Channels stay where they are, posts stay where they are, and one toggle brings it all back.",
+  "Вопросы, которые вы уже придумали": "The questions you've already thought of",
+  "Сколько стоит?": "How much does it cost?",
+  "Ничего. Приложение бесплатное, рекламы внутри нет.": "Nothing. The app is free and has no ads.",
+  "Меня не забанят за сторонний клиент?": "Will I get banned for using a third-party client?",
+  "Сторонние клиенты телеграм разрешает — на этом держится половина его экосистемы. Баны прилетают за спам и массовые рассылки; FidRid не делает ни того, ни другого.": "Telegram allows third-party clients — half its ecosystem is built on them. Bans come for spam and mass messaging; FidRid does neither.",
+  "А личные чаты вы видите?": "Can you see my private chats?",
+  "FidRid показывает только каналы, которые вы сами включили. Личка в приложение не попадает — в этом вся идея.": "FidRid shows only the channels you switched on yourself. Private chats never enter the app — that's the whole point.",
+  "Что будет с непрочитанными, если я замьючу канал?": "What happens to unread posts if I mute a channel?",
+  "Ничего. Мьют убирает звук и бейдж, архив — из основного списка. Посты остаются в телеграме и появляются в ленте FidRid.": "Nothing. Mute removes the sound and the badge, archive removes it from the main list. Posts stay in Telegram and show up in the FidRid feed.",
+  "Android будет?": "Will there be an Android version?",
+  "Пока только iPhone. Android в планах — о старте напишем в канале проекта.": "iPhone only for now. Android is planned — we'll announce it in the project channel.",
+  "Верните телеграму его работу": "Give Telegram its job back",
+  "Личные сообщения — в телеграме. Каналы — в ленте. Две минуты на настройку, и список чатов снова помещается на один экран.": "Private messages in Telegram. Channels in the feed. Two minutes of setup and your chat list fits on one screen again.",
+  "iPhone 14.0 и новее · бесплатно": "iPhone 14.0 and later · free",
+  "FidRid — неофициальный клиент Telegram, не связанный с Telegram LLC.": "FidRid is an unofficial Telegram client, not affiliated with Telegram LLC.",
+  "Условия использования": "Terms of Use",
+  "Политика конфиденциальности": "Privacy Policy",
+  "Обработка персональных данных": "Personal Data Processing",
+  "Поддержка": "Support",
+  "П": "P", "С": "D", "З": "T", "К": "C", "Т": "B", "М": "M", "Н": "N", "Р": "R"
+};
+
+class Component extends DCLogic {
+  state = { lang: "ru" };
+
+  renderVals() {
+    return {
+      langBtn: this.state.lang === "ru" ? "EN" : "RU",
+      rootRef: (el) => { this.root = el; },
+      toggleLang: () => this.setState((s) => ({ lang: s.lang === "ru" ? "en" : "ru" }))
+    };
+  }
+
+  componentDidUpdate() { this.applyLang(); }
+
+  applyLang() {
+    if (!this.root) return;
+    if (this.state.lang === "ru") {
+      if (this.originals) {
+        for (const [node, text] of this.originals) node.nodeValue = text;
+        this.originals = null;
+      }
+      return;
+    }
+    this.originals = new Map();
+    const walker = document.createTreeWalker(this.root, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    for (const node of nodes) {
+      if (node.parentElement && node.parentElement.closest("[data-nolang]")) continue;
+      const m = /^(\s*)([\s\S]*?)(\s*)$/.exec(node.nodeValue);
+      if (!m || !m[2]) continue;
+      const hit = DICT[m[2]];
+      if (hit) {
+        this.originals.set(node, node.nodeValue);
+        node.nodeValue = m[1] + hit + m[3];
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>

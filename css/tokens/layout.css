@@ -1,0 +1,8 @@
+/* ============================================================
+   tokens/layout.css — content width & responsive gutter
+   ============================================================ */
+:root {
+  --maxw: 1240px;                  /* default content column */
+  --maxw-wide: 1480px;             /* wide schema / app frames */
+  --pad:  clamp(20px, 5vw, 80px);  /* page side padding */
+}

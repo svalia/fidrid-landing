@@ -1,0 +1,16 @@
+/* ============================================================
+   tokens/typography.css — type families
+   Golos Text (variable) is the brand face; embedded in golos-embed.css
+   Fallbacks name the internal SB Sans faces, then system.
+   ============================================================ */
+:root {
+  --font-display: "Golos Text", "SB Sans Display", Roboto, system-ui, sans-serif;
+  --font-text:    "Golos Text", "SB Sans Text", Roboto, system-ui, sans-serif;
+
+  /* weights actually used across the deck system */
+  --fw-regular:  400; /* @kind font */
+  --fw-medium:   500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold:     700; /* @kind font */
+  --fw-black:    800; /* @kind font */
+}
