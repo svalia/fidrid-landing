@@ -1,6 +1,6 @@
 # FidRid — Consent to Personal Data Processing
 
-**Version 1.0 — effective 21 September 2026**
+**Version 1.1 — effective 22 September 2026**
 
 By using the **FidRid** mobile application (the "App"), provided by **Valentin Smolin** (the "Developer"), I freely, specifically and in an informed and unambiguous manner, confirming that I am at least 16 years old and have legal capacity, give my consent to the processing of my personal data as described below.
 
@@ -12,8 +12,9 @@ The following data may be processed while I use the App:
 
 - device technical data (device model, iOS version, App version);
 - an anonymised internal identifier of the App installation;
-- usage data (App launch, first launch, screen views);
-- IP address — in truncated (anonymised) form, without precise location;
+- usage data (App launch, first launch, screen views, time spent in the App, anonymised interface interaction events that do not identify which channel, post or feed they relate to);
+- aggregate counters (number of channels, feeds and favourite posts, state of App settings), without channel, post or feed names or identifiers;
+- country, taken from the device region settings; the IP address is not included in analytics events;
 - the system push token — where I grant notification permission.
 
 The following data is processed but is **not** covered by this consent, because a different legal basis applies:

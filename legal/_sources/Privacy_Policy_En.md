@@ -1,6 +1,6 @@
 # FidRid — Privacy Policy
 
-**Version 1.0 — effective 21 September 2026**
+**Version 1.1 — effective 22 September 2026**
 
 ## 1. Who we are and what this policy covers
 
@@ -31,8 +31,9 @@
 | Your settings | folders, filters, favourites, in-app read states, notification preferences | locally only, on your device |
 | Device technical data | device model, iOS version, App version | sent to our analytics provider in anonymised form |
 | Internal identifier | anonymised App installation identifier | sent to our analytics provider |
-| Usage events | App launch, first launch, screen views | sent to our analytics provider |
-| IP address | processed by the analytics provider in truncated (anonymised) form, without precise location | at the analytics provider |
+| Usage events | App launch, first launch, screen views, time spent in the App, anonymised interface interaction events (button taps, settings changes, completed actions) that do not identify which channel, post or feed they relate to | sent to our analytics provider |
+| Aggregate counters | number of subscribed, enabled, muted and archived channels, number of feeds and favourite posts, state of App settings, with no channel, post or feed names or identifiers | sent to our analytics provider |
+| IP address | not included in analytics events and not used to determine location; country is taken from the device region settings | not sent with events |
 
 ## 4. What we do not collect
 
